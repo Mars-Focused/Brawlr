@@ -1,1 +1,2 @@
--- FILL ME UP UwU
+--this function should return the information all the users that share a game with our
+--logged in user, minus the people who are already on his friends list.
