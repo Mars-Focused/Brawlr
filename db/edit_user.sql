@@ -1,3 +1,5 @@
 UPDATE brawlr_users 
-SET contact_info = 'goku@email.com' 
-WHERE user_id = 15;
+SET contact_info = $2 
+WHERE user_id = $1;
+
+-- MAKE SURE CONTACT INFO IS A 'STRING'!!!!!!!!!!!!
