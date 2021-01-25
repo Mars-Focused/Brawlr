@@ -9,7 +9,7 @@
 
 
 
-SELECT * FROM brawlr_games
+SELECT game_id FROM brawlr_games
 WHERE game_name = $1
 
 --MAKE SURE THAT THE VARIABLE COMING IN IS A STRING WITH '' AROUND IT!!!!!!!!!!!!
