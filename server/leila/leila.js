@@ -1,11 +1,11 @@
 module.exports = {
-  Leila: (port, name) => {
+  fox: (port, name) => {
     let frame = 0;
     function leilaAnimation() {
       frame++;
       let leila = "";
       if (frame > 400) {
-        frame = 0;
+        frame = 401;
       }
 
       // head and text bubble

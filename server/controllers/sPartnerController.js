@@ -37,7 +37,23 @@ module.exports = {
     return res.send(SPList);
   },
 
-  delSP: async (req, res) => {},
+  delSP: async (req, res) => {
+    const { sp } = req.params;
+    const { id } = req.session.user;
+    const db = req.app.get("db");
+    //get the ID of the other sp
+    const spInfo = await db.get_user(sp);
+    const { user_id } = spInfo[0];
+    console.log(user_id);
+    await db.delete_sp(id, user_id);
+    res.sendStatus(200);
+  },
 
-  getSPInfo: async (req, res) => {},
+  getSPInfo: async (req, res) => {
+    console.log("well we're here");
+    const db = req.app.get("db");
+    const { sp } = req.params;
+    const Info = await db.get_user(sp);
+    res.status(200).send(Info);
+  },
 };
