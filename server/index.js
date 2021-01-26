@@ -4,7 +4,7 @@ const session = require("express-session");
 const massive = require("massive");
 const authCtrl = require("./controllers/authController");
 const gameCtrl = require("./controllers/gameController");
-// const dateCtrl = require("./controllers/dateController");
+const spCtrl = require("./controllers/sPartnerController");
 // const auth = require("./middleware/authMiddleware");
 
 const PORT = 5000;
@@ -35,6 +35,11 @@ app.post("/auth/register", authCtrl.register);
 app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
 app.put("/auth/add_contact_info", authCtrl.addCInfo);
+
+app.get("/api/get_rec_sp", spCtrl.getRecSP);
+app.post("/api/add_sp", spCtrl.addSP);
+app.get("/api/get_my_sp", spCtrl.getMySP);
+app.delete("/api/del_sp", spCtrl.delSP);
 
 app.post("/api/add_game", gameCtrl.addGame);
 
