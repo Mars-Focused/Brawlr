@@ -3,7 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const massive = require("massive");
 const authCtrl = require("./controllers/authController");
-// const compCtrl = require("./controllers/compController");
+const gameCtrl = require("./controllers/gameController");
 // const dateCtrl = require("./controllers/dateController");
 // const auth = require("./middleware/authMiddleware");
 
@@ -20,9 +20,7 @@ massive({
   ssl: { rejectUnauthorized: false },
 }).then((db) => {
   app.set("db", db);
-  console.log(
-    `(DB Ready Nya~)\n    |\\_/|  / \n    |/ \\| / \n    *\\_/* \n    .-"-. \n   /(_Y_)\\ \n   \\\\) (// \n    /___\\ \n    \\~|~/ \n     \\|/\\ \n     /|\\ \\_/\\ \n     \\|/\\___/ \n     /Y\\ \n`
-  );
+  console.log(`DB Ready Nya~`);
 });
 
 app.use(
@@ -38,8 +36,6 @@ app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
 app.put("/auth/add_contact_info", authCtrl.addCInfo);
 
-app.listen(PORT, () =>
-  console.log(
-    `(Port ${PORT} Ready) \n    |\\_/|  / \n    |/ \\| / \n    *\\_/* \n    .-"-. \n   /(_Y_)\\ \n   \\\\) (// \n    /___\\ \n    \\~|~/ \n    /\\|/ \n/\\_/ /|\\ \n\\___/\\|/ \n     /Y\\ \n`
-  )
-);
+app.post("/api/add_game", gameCtrl.addGame);
+
+app.listen(PORT, () => console.log(`Port ${PORT} Ready`));

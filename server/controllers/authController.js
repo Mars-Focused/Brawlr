@@ -18,9 +18,10 @@ module.exports = {
   },
 
   addCInfo: async (req, res) => {
+    const db = req.app.get("db");
     const { contactInfo } = req.body;
     const { id } = req.session.user;
-    const db = req.app.get("db");
+    console.log(id);
     await db.edit_user(id, contactInfo);
     return res.sendStatus(200);
   },
@@ -29,9 +30,9 @@ module.exports = {
     const { username, password } = req.body;
     const db = req.app.get("db");
     //I removed brackets around the word username because I did not understand why they were there.
-    const foundUser = await db.get_user(username);
+    const foundUser = await db.get_user([username]);
     const user = foundUser[0];
-    // console.log(`authController user:${user}`);
+    // console.log(`authController user.user_id:`, user.user_id);
     if (!user) {
       return res
         .status(401)
@@ -45,10 +46,10 @@ module.exports = {
     }
     // Login user Successful creating req.session.user
     req.session.user = {
-      id: user.id,
+      id: user.user_id,
       username: user.username,
     };
-    // console.log(req.session);
+    // console.log(req.session.user.id);
     return res.status(200).send(req.session.user); // <- sending req.session.user to the front end (Login.js line: 40)
   },
 
