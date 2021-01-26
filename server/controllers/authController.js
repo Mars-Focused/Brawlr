@@ -17,6 +17,14 @@ module.exports = {
     return res.status(201).send(req.session.user);
   },
 
+  addCInfo: async (req, res) => {
+    const { contactInfo } = req.body;
+    const { id } = req.session.user;
+    const db = req.app.get("db");
+    await db.edit_user(id, contactInfo);
+    return res.sendStatus(200);
+  },
+
   login: async (req, res) => {
     const { username, password } = req.body;
     const db = req.app.get("db");
