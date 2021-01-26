@@ -20,7 +20,9 @@ massive({
   ssl: { rejectUnauthorized: false },
 }).then((db) => {
   app.set("db", db);
-  console.log("Database connected! Nya~");
+  console.log(
+    `(DB Ready Nya~)\n    |\\_/|  / \n    |/ \\| / \n    *\\_/* \n    .-"-. \n   /(_Y_)\\ \n   \\\\) (// \n    /___\\ \n    \\~|~/ \n     \\|/\\ \n     /|\\ \\_/\\ \n     \\|/\\___/ \n     /Y\\ \n`
+  );
 });
 
 app.use(
@@ -36,4 +38,8 @@ app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
 app.put("/auth/add_contact_info", authCtrl.addCInfo);
 
-app.listen(PORT, () => console.log(`Port ${PORT} Ready Master! `));
+app.listen(PORT, () =>
+  console.log(
+    `(Port ${PORT} Ready) \n    |\\_/|  / \n    |/ \\| / \n    *\\_/* \n    .-"-. \n   /(_Y_)\\ \n   \\\\) (// \n    /___\\ \n    \\~|~/ \n    /\\|/ \n/\\_/ /|\\ \n\\___/\\|/ \n     /Y\\ \n`
+  )
+);
