@@ -4,14 +4,14 @@ module.exports = {
     function leilaAnimation() {
       frame++;
       let leila = "";
-      if (frame > 300) {
-        frame = 301;
+      if (frame > 500) {
+        frame = 501;
       }
 
       // head and text bubble
       let leilaHead = "";
 
-      if (frame == 301) {
+      if (frame == 501) {
         leilaHead += `(ZZZZZZZZZZZZZZ)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
