@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class AddLikedGame extends Component {
-  render() {
-    return <div></div>;
-  }
-}
+function AddLikedGame() {}
+
+return (
+  <div>
+    <h3>AddLikedGame</h3>
+  </div>
+);
+
+export default AddLikedGame;

@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class MySPList extends Component {
-  render() {
-    return <div></div>;
-  }
-}
+function MySPList() {}
+
+return (
+  <div>
+    <h3>MySPList</h3>
+  </div>
+);
+
+export default MySPList;
