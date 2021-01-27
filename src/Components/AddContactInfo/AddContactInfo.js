@@ -1,9 +1,11 @@
 import React from "react";
 
-class AddContactInfo extends Component {
-  render() {
-    return <div></div>;
-  }
-}
+function AddContactInfo() {}
+
+return (
+  <div>
+    <h3>AddContactInfo</h3>
+  </div>
+);
 
 export default AddContactInfo;
