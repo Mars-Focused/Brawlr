@@ -4,43 +4,43 @@ module.exports = {
     function leilaAnimation() {
       frame++;
       let leila = "";
-      if (frame > 500) {
-        frame = 501;
+      if (frame > 700) {
+        frame = 701;
       }
 
       // head and text bubble
       let leilaHead = "";
 
-      if (frame == 501) {
-        leilaHead += `(ZZZZZZZZZZZZZZ)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+      if (frame == 701) {
+        leilaHead += `(ZZZZZZZZZZZ)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame == 1 && leilaHead == "") {
-        leilaHead += `(Port ${port} Ready Sir )\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+        leilaHead += `(Pt ${port} OK!)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame == 2 && leilaHead == "") {
-        leilaHead += `(Database Connected Nya!)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+        leilaHead += `(DB OK! Nya!)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame == 3 && leilaHead == "") {
-        leilaHead += `(Ready to Serve You...)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+        leilaHead += `(Ready2Serve)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame == 4 && leilaHead == "") {
-        leilaHead += `   (Master ${name})\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+        leilaHead += `(Master ${name})\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame % 32 == 0 && leilaHead == "") {
-        leilaHead += `(You're Doing Great!)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+        leilaHead += `(Doing Great)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if ((frame - 1) % 32 == 0 && leilaHead == "" && frame > 2) {
-        leilaHead += `(Keep On Coding! Nya!)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+        leilaHead += `(Keep Coding)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame % 16 == 0 && leilaHead == "") {
-        leilaHead += `(I <3 U Master)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+        leilaHead += `(I <3 Master)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame % 24 == 0 && leilaHead == "") {
