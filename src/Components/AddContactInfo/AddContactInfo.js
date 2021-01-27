@@ -1,10 +1,10 @@
 import React from "react";
 
-function AddContactInfo() {
+const AddContactInfo = () => {
   return (
     <div>
       <h3>AddContactInfo</h3>
     </div>
   );
-}
+};
 export default AddContactInfo;

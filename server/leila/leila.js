@@ -91,7 +91,7 @@ module.exports = {
 
       setTimeout(() => {
         leilaAnimation();
-      }, 937.5);
+      }, 937.45);
     }
     // Wrap the equation below with a setTimeout function to delay it, rather than starting the animation immediately
     leilaAnimation();
