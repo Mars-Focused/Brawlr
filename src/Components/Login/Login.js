@@ -28,12 +28,12 @@ const Login = (props) => {
   async function login(e) {
     if (e) e.preventDefault();
     try {
-      console.log("we made it here");
+      // console.log("we made it here");
       const user = await axios.post("/auth/login", { username, password }); // <- axios.post to log the user in, response is req.session.user from the server, storing it in variable called user.
       //Username and Password go straight onto req.body
-      console.log("and here!", user.data);
+      // console.log("and here!", user.data);
       if (user.data.id) {
-        console.log("AND EVEN HERE!", props.history);
+        // console.log("AND EVEN HERE!", props.history);
         // console.log(`user.data ${user.data[0]}`);
         // <- When you get a successful response from axios it's stored on a object called "data".
         props.loginUser(user.data); // <- is calling the function loginUser on userReducer.js

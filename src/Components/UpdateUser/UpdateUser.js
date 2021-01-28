@@ -6,8 +6,8 @@ class UpdateUser extends Component {
     return (
       <div>
         <h1>UpdateUserView</h1>
-        <AddContactInfo />
         <AddLikedGame />
+        <AddContactInfo />
       </div>
     );
   }
