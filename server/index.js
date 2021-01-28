@@ -5,7 +5,7 @@ const massive = require("massive");
 const authCtrl = require("./controllers/authController");
 const gameCtrl = require("./controllers/gameController");
 const spCtrl = require("./controllers/sPartnerController");
-const leila = require("./leila/leila");
+const Leila = require("./leila/leila");
 // const auth = require("./middleware/authMiddleware");
 
 const PORT = 5000;
@@ -22,7 +22,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log("Database Connected");
-  leila.fox(PORT, "Mars");
+  // Leila.Fox(PORT, "Mars"); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(

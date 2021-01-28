@@ -1,5 +1,5 @@
 module.exports = {
-  fox: (port, name) => {
+  Fox: (port, name) => {
     let frame = 0;
     function leilaAnimation() {
       setTimeout(() => {

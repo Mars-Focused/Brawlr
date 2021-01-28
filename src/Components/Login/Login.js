@@ -13,13 +13,11 @@ const Login = (props) => {
   const [password, setPassword] = useState("");
 
   async function register(e) {
-    if (!this.state.username || !this.state.password)
-      return alert("cannot be blank");
+    if (!username || !password) return alert("cannot be blank");
     if (e) e.preventDefault();
-    const { username, password } = this.state;
     try {
       const res = await axios.post("/auth/register", { username, password }); //<- whats inside these curly braces is "body"
-      if (res.data.id) this.props.history.push("/Update");
+      if (res.data.id) props.history.push("/Update");
     } catch (e) {
       alert("User already exists");
       // this.props.history.push("/");
@@ -28,7 +26,6 @@ const Login = (props) => {
 
   async function login(e) {
     if (e) e.preventDefault();
-    const { username, password } = this.state;
     try {
       const user = await axios.post("/auth/login", { username, password }); // <- axios.post to log the user in, response is req.session.user from the server, storing it in variable called user.
       //Username and Password go straight onto req.body
@@ -48,6 +45,24 @@ const Login = (props) => {
   return (
     <div>
       <h3>Login</h3>
+      <input
+        type="text"
+        className="username-input"
+        placeholder="Name"
+        onChange={(e) => setUsername({ username: e.target.value })}
+      />
+      <input
+        type="password"
+        className="password-input"
+        placeholder="Password"
+        onChange={(e) => setPassword({ password: e.target.value })}
+      />
+      <button className="register-btn" type="submit" onClick={register}>
+        Register
+      </button>
+      <button className="login-btn" type="submit" onClick={login}>
+        Login
+      </button>
     </div>
   );
 };
