@@ -21,7 +21,7 @@ massive({
   ssl: { rejectUnauthorized: false },
 }).then((db) => {
   app.set("db", db);
-  console.log("Database Connected");
+  // console.log("Database Connected");
   Leila.Fox(PORT, "Mars"); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
@@ -46,4 +46,4 @@ app.get("/api/get_sp_info/:sp", spCtrl.getSPInfo);
 
 app.post("/api/add_game", gameCtrl.addGame);
 
-app.listen(PORT, () => console.log(`Port ${PORT} connected`));
+app.listen(PORT, () => console.log(`...LOADING...`));

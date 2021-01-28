@@ -10,7 +10,7 @@ function App() {
   return (
     <HashRouter>
       <Switch>
-        <Route path="/" component={Login} />
+        <Route path="/" exact component={Login} />
         <Route path="/Update" component={Update} />
         <Route path="/Main" component={BrawlrMain} />
         <Route path="/SPView" component={SPView} />
