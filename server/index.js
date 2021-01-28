@@ -21,7 +21,7 @@ massive({
   ssl: { rejectUnauthorized: false },
 }).then((db) => {
   app.set("db", db);
-  // console.log("Database Connected");
+  console.log(`Database Connected on port ${PORT}`);
   Leila.Fox(PORT, "Mars"); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 

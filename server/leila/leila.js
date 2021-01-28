@@ -51,7 +51,7 @@ module.exports = {
       }
 
       if (frame == 2) {
-        phraseBit = `Database Connected Nya!`;
+        phraseBit = `Database Connected!`;
       }
 
       if (frame == 3) {

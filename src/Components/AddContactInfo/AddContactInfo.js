@@ -3,7 +3,8 @@ import React from "react";
 const AddContactInfo = () => {
   return (
     <div>
-      <h3>AddContactInfo</h3>
+      <input placeholder="AddContactInfo"></input>
+      <button>Add</button>
     </div>
   );
 };
