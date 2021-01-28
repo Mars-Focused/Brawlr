@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
+import { loginUser } from "../../Redux/userReducer";
 
 // import { register } from "../../../server/controllers/authController";
 
@@ -35,7 +36,7 @@ const Login = (props) => {
         console.log("AND EVEN HERE!", props.history);
         // console.log(`user.data ${user.data[0]}`);
         // <- When you get a successful response from axios it's stored on a object called "data".
-        // props.loginUser(user.data); // <- is calling the function loginUser on userReducer.js
+        props.loginUser(user.data); // <- is calling the function loginUser on userReducer.js
         props.history.push("/Update"); // .this will end the function kind of like a return statement
       }
     } catch (e) {
@@ -68,4 +69,8 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+function mapStateToProps(reduxState) {
+  return reduxState;
+}
+
+export default connect(mapStateToProps, { loginUser })(Login);
