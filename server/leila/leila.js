@@ -42,8 +42,8 @@ module.exports = {
         leilaHead += `(Keep Coding)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
-      if (frame % 16 == 0 && leilaHead == "") {
-        leilaHead += `(I <3 Master)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+      if ((frame - 7) % 23 == 0 && leilaHead == "") {
+        leilaHead += `(I'm a Fox!)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (frame % 24 == 0 && leilaHead == "") {
@@ -52,6 +52,10 @@ module.exports = {
 
       if ((frame - 1) % 24 == 0 && leilaHead == "" && frame > 2) {
         leilaHead += `(Purr~ Purr~)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
+      }
+
+      if (frame % 16 == 0 && leilaHead == "") {
+        leilaHead += `(I <3 Master)\n    |\\_/|  / \n    |/ \\|   \n    *\\o/* \n    .-"-. \n`;
       }
 
       if (leilaHead == "") {
@@ -67,11 +71,11 @@ module.exports = {
           `    .   .\n    |\\_/|    \n    |/ \\|   \n    *\\=/* \n    .-"-. \n` &&
         leilaBody == ""
       ) {
-        leilaBody += `   /(_Y_)\\ \n  // ) ( \\\\ \n    /___\\ \n    \\~|~/ \n`;
+        leilaBody += `   /(_Y_)\\ \n   \\\\):(//  \n    /___\\ \n    \\~|~/ \n`;
       }
 
       if (leilaBody == "") {
-        leilaBody += `   /(_Y_)\\ \n   \\\\) (// \n    /___\\ \n    \\~|~/ \n`;
+        leilaBody += `   /(_Y_)\\ \n   \\\\):(// \n    /___\\ \n    \\~|~/ \n`;
       }
       leila += leilaBody;
 

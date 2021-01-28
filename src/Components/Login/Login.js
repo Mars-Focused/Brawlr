@@ -5,7 +5,7 @@ import axios from "axios";
 // import { register } from "../../../server/controllers/authController";
 
 const Login = (props) => {
-  console.log("login props: ", props);
+  // console.log("login props: ", props);
   //where username is is what we're calling the information on state
   //where setUsername is is the function we will call to update that state
   //and what we pass into useState will be our default state value
@@ -33,9 +33,8 @@ const Login = (props) => {
       if (user.data.id) {
         // console.log(`user.data ${user.data[0]}`);
         // <- When you get a successful response from axios it's stored on a object called "data".
-        this.props.loginUser(user.data); // <- is calling the function loginUser on userReducer.js line 19
-        this.props.history.push("/Update"); // .this will end the function kind of like a return statement
-        this.setState({ user: this.state });
+        props.loginUser(user.data); // <- is calling the function loginUser on userReducer.js line 19
+        props.history.push("/Update"); // .this will end the function kind of like a return statement
       }
     } catch (e) {
       alert("Login failed. Please try again.");
@@ -49,13 +48,13 @@ const Login = (props) => {
         type="text"
         className="username-input"
         placeholder="Name"
-        onChange={(e) => setUsername({ username: e.target.value })}
+        onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
         className="password-input"
         placeholder="Password"
-        onChange={(e) => setPassword({ password: e.target.value })}
+        onChange={(e) => setPassword(e.target.value)}
       />
       <button className="register-btn" type="submit" onClick={register}>
         Register
