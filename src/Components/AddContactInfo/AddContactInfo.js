@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { axios } from "axios";
+import axios from "axios";
 
 const AddContactInfo = () => {
   // in order to AddContactInfo to our user we first need to get
@@ -11,20 +11,20 @@ const AddContactInfo = () => {
 
   async function sendInfo(e) {
     if (e) e.preventDefault();
-    console.log(contactInfo.input);
-    await axios.post("/auth/add_contact_info", {
-      contactInfo: contactInfo.input,
+    console.log(contactInfo);
+    await axios.put("/auth/add_contact_info", {
+      contactInfo: contactInfo,
     });
     // const { username } = reduxState;
   }
-  console.log(contactInfo.input);
+  console.log(contactInfo);
   return (
     <div>
       <input
         placeholder="AddContactInfo"
         className="CIInput"
-        onChange={(e) => setInput({ input: e.target.value })}
-      ></input>
+        onChange={(e) => setInput(e.target.value)}
+      />
       <button onClick={sendInfo}>Add</button>
     </div>
   );

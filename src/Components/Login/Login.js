@@ -17,8 +17,12 @@ const Login = (props) => {
     if (!username || !password) return alert("cannot be blank");
     if (e) e.preventDefault();
     try {
-      const res = await axios.post("/auth/register", { username, password }); //<- whats inside these curly braces is "body"
-      if (res.data.id) props.history.push("/Update");
+      const res = await axios.post("/auth/register", { username, password })
+        .then; //<- whats inside these curly braces is "body"
+      console.log(res.data.id);
+      if (res.data.id) {
+        props.history.push("/Update");
+      }
     } catch (e) {
       alert("User already exists");
       // this.props.history.push("/");
@@ -29,15 +33,11 @@ const Login = (props) => {
     if (e) e.preventDefault();
     try {
       // console.log("we made it here");
-      const user = await axios.post("/auth/login", { username, password }); // <- axios.post to log the user in, response is req.session.user from the server, storing it in variable called user.
+      const res = await axios.post("/auth/login", { username, password }); // <- axios.post to log the user in, response is req.session.user from the server, storing it in variable called user.
       //Username and Password go straight onto req.body
-      // console.log("and here!", user.data);
-      if (user.data.id) {
-        // console.log("AND EVEN HERE!", props.history);
-        // console.log(`user.data ${user.data[0]}`);
-        // <- When you get a successful response from axios it's stored on a object called "data".
-        props.loginUser(user.data); // <- is calling the function loginUser on userReducer.js
+      if (res.data.id) {
         props.history.push("/Update"); // .this will end the function kind of like a return statement
+        props.loginUser(res.data); // <- is calling the function loginUser on userReducer.js
       }
     } catch (e) {
       alert("Login failed. Please try again.");
