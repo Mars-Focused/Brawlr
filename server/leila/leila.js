@@ -93,7 +93,6 @@ module.exports = {
         leilaLegs = `     \\|/\\ \n     /|\\ \\_/\\ \n     \\|/\\___/ \n     /Y\\`;
       }
       leila += leilaLegs;
-
       console.log(leila);
     }
     // Wrap the equation below with a setTimeout function to delay it, rather than starting the animation immediately
