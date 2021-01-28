@@ -2,6 +2,9 @@ module.exports = {
   fox: (port, name) => {
     let frame = 0;
     function leilaAnimation() {
+      setTimeout(() => {
+        leilaAnimation();
+      }, 937.5);
       frame++;
       let leila = "";
       if (frame > 700) {
@@ -88,10 +91,6 @@ module.exports = {
       leila += leilaLegs;
 
       console.log(leila);
-
-      setTimeout(() => {
-        leilaAnimation();
-      }, 937.45);
     }
     // Wrap the equation below with a setTimeout function to delay it, rather than starting the animation immediately
     leilaAnimation();
