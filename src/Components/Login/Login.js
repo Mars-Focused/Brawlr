@@ -17,24 +17,21 @@ const Login = (props) => {
     if (!username || !password) return alert("cannot be blank");
     if (e) e.preventDefault();
     try {
-      const res = await axios.post("/auth/register", { username, password })
-        .then; //<- whats inside these curly braces is "body"
-      console.log(res.data.id);
-      if (res.data.id) {
+      const res = await axios.post("/auth/register", { username, password });
+      console.log(res.data);
+      if (res.data) {
         props.history.push("/Update");
       }
     } catch (e) {
       alert("User already exists");
-      // this.props.history.push("/");
+      props.history.push("/");
     }
   }
 
   async function login(e) {
     if (e) e.preventDefault();
     try {
-      // console.log("we made it here");
       const res = await axios.post("/auth/login", { username, password }); // <- axios.post to log the user in, response is req.session.user from the server, storing it in variable called user.
-      //Username and Password go straight onto req.body
       if (res.data.id) {
         props.history.push("/Update"); // .this will end the function kind of like a return statement
         props.loginUser(res.data); // <- is calling the function loginUser on userReducer.js

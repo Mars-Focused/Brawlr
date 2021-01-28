@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import { loginUser } from "../../Redux/userReducer";
 
-const AddContactInfo = () => {
+const AddContactInfo = (props) => {
   // in order to AddContactInfo to our user we first need to get
   // Our User ID and it SHOULD be on state...
 
@@ -11,13 +12,18 @@ const AddContactInfo = () => {
 
   async function sendInfo(e) {
     if (e) e.preventDefault();
+    // try {
     console.log(contactInfo);
-    await axios.put("/auth/add_contact_info", {
+    const res = await axios.put("/auth/add_contact_info", {
       contactInfo: contactInfo,
     });
+    if (res.data) props.history.push("/Main");
+    // } catch (e) {
+    //   alert("email didn't update something went wrong");
+    // }
     // const { username } = reduxState;
   }
-  console.log(contactInfo);
+  console.log(props);
   return (
     <div>
       <input
@@ -31,7 +37,13 @@ const AddContactInfo = () => {
 };
 
 function mapStateToProps(reduxState) {
-  return reduxState;
+  return {
+    user_id: reduxState.user.user.id,
+    username: reduxState.user.user.username,
+    darkMode: reduxState.darkMode.darkMode,
+    //whenever you return redux state that means i'll have to use a lot of dots
+    //to get the specific data.
+  };
 }
 
 export default connect(mapStateToProps, {})(AddContactInfo);

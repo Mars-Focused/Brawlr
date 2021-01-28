@@ -7,7 +7,7 @@ class UpdateUser extends Component {
       <div>
         <h1>UpdateUserView</h1>
         <AddLikedGame />
-        <AddContactInfo />
+        <AddContactInfo {...this.props} />
       </div>
     );
   }
