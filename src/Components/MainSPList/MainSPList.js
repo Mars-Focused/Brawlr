@@ -3,7 +3,7 @@ import React from "react";
 const MainSPList = () => {
   return (
     <div>
-      <h3>MainSPList</h3>
+      <h1>MainSPList</h1>
     </div>
   );
 };
