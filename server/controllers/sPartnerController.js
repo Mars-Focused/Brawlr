@@ -51,10 +51,9 @@ module.exports = {
   },
 
   getSPInfo: async (req, res) => {
-    console.log("well we're here");
     const db = req.app.get("db");
     const { sp } = req.params;
-    const Info = await db.get_user(sp);
+    const Info = await db.get_user_info(sp);
     res.status(200).send(Info);
   },
 };
