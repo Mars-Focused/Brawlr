@@ -9,7 +9,13 @@ SELECT DISTINCT user_id FROM game_user_junction
 WHERE game_id IN (
 SELECT game_id from game_user_junction
 WHERE user_id = $1
-) AND user_id != $1
+) AND user_id NOT IN (
+SELECT user_id_2 FROM user_user_junction
+WHERE user_id_1 = $1 OR user_id_2 = $1
+) AND user_id NOT IN (
+SELECT user_id_1 FROM user_user_junction
+WHERE user_id_1 = $1 OR user_id_2 = $1
+)
 
 --take in user id
 --Find each row for our user_id in user_game_junction_table

@@ -1,7 +1,8 @@
 module.exports = {
   getRecSP: async (req, res) => {
+    const { id } = req.session.user;
     const db = req.app.get("db");
-    RSP = await db.get_rec_sp();
+    RSP = await db.get_rec_sp(id);
     res.status(200).send(RSP);
   },
 
