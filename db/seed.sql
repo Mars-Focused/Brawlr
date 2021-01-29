@@ -43,7 +43,8 @@ VALUES
 ('Valentine', '$2a$10$fwQ33X5CVGmQhgXJL1UuF.NeuQWj5haKMXsOxNxj4/rRiv6/jWwDW', 'Valentine@email.com'),
 ('Ramlethal', '$2a$10$fwQ33X5CVGmQhgXJL1UuF.NeuQWj5haKMXsOxNxj4/rRiv6/jWwDW', 'Ramlethal@email.com'),
 ('Bedman', '$2a$10$fwQ33X5CVGmQhgXJL1UuF.NeuQWj5haKMXsOxNxj4/rRiv6/jWwDW', 'Bedman@email.com'),
-('PxlNinjaRight', '$2a$10$fwQ33X5CVGmQhgXJL1UuF.NeuQWj5haKMXsOxNxj4/rRiv6/jWwDW', 'FootsiesR@email.com');
+('PxlNinjaRight', '$2a$10$fwQ33X5CVGmQhgXJL1UuF.NeuQWj5haKMXsOxNxj4/rRiv6/jWwDW', 'FootsiesR@email.com'),
+('Mars', '$2a$10$fwQ33X5CVGmQhgXJL1UuF.NeuQWj5haKMXsOxNxj4/rRiv6/jWwDW', 'Mars@email.com');
 
 INSERT INTO brawlr_games
 (game_name)
@@ -66,7 +67,9 @@ VALUES
 (3,8),
 (4,10),
 (5,14),
-(6,9);
+(6,9),
+(15,7),
+(15,10);
 
 INSERT INTO game_user_junction
 (user_id, game_id)
@@ -89,4 +92,7 @@ VALUES
 (3,3),
 (7,3),
 (4,3),
-(12,3);
+(12,3),
+(15,6),
+(15,1),
+(15,3);

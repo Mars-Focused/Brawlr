@@ -7,7 +7,6 @@ class BrawlrMain extends Component {
     return (
       <div>
         <MainHeader {...this.props} />
-        <h1>BrawlrMain</h1>
         <MainSPList {...this.props} />
       </div>
     );

@@ -4,7 +4,9 @@ class MainHeader extends Component {
   render() {
     return (
       <div>
-        <h1>MainHeader</h1>
+        <button>Edit User</button>
+        <button>My Sparing Partners</button>
+        <button>Logout</button>
       </div>
     );
   }

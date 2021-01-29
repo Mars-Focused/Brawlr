@@ -15,8 +15,6 @@ const AddLikedGame = (props) => {
     }
   }
 
-  // console.log("e:", );
-  // const [newGame, setNewGame] = useState;
   return (
     <div>
       <input

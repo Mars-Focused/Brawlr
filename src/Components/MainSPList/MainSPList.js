@@ -1,6 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const MainSPList = () => {
+const MainSPList = (props) => {
   return (
     <div>
       <h1>MainSPList</h1>
@@ -8,4 +9,10 @@ const MainSPList = () => {
   );
 };
 
-export default MainSPList;
+function mapStateToProps(reduxState) {
+  return {
+    user_id: reduxState.user.user.id,
+  };
+}
+
+export default connect(mapStateToProps, {})(MainSPList);
