@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { loginUser } from "../../Redux/userReducer";
 
 const AddContactInfo = (props) => {
   // in order to AddContactInfo to our user we first need to get

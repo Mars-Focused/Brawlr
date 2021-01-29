@@ -14,7 +14,7 @@ module.exports = {
       gameId = game_id;
       // return res.status(200);
     } else {
-      console.log("existingGame:", existingGame);
+      console.log("gameController, existingGame:", existingGame);
       gameId = existingGame;
     }
     await db.add_ugj([id, gameId]);
