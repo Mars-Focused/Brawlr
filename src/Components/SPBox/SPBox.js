@@ -1,22 +1,30 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
-//in this component we need to take in the SPid
-//we need to call
-
 const SPBox = (props) => {
-  function getRecSparingPartnerInfo() {
-    let { SPid } = props;
-    console.log(SPid);
-    return axios.get(`/api/get_sp_info/${SPid.user_id}`);
-  }
+  const [SPObj, setSPObj] = useState({});
+  // function getRecSparingPartnerInfo() {
+  // let { SPid } = props;
+  // axios.get(`/api/get_sp_info/${SPid.user_id}`).then((res) => {
+  //   console.log("SPBox, res.data[0]:", res.data[0]);
+  //   setSPObj(res.data[0]);
+  // });
+  // }
 
-  let SPObj = getRecSparingPartnerInfo();
+  useEffect(() => {
+    let { SPid } = props;
+    axios.get(`/api/get_sp_info/${SPid.user_id}`).then((res) => {
+      console.log("SPBox, res.data[0]:", res.data[0]);
+      setSPObj(res.data[0]);
+    });
+  }, []);
+
+  const { username } = SPObj;
 
   return (
     <div>
-      <h1>SPBox</h1>
+      <h1>{username}</h1>
     </div>
   );
 };

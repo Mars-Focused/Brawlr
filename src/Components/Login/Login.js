@@ -3,8 +3,6 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { loginUser } from "../../Redux/userReducer";
 
-// import { register } from "../../../server/controllers/authController";
-
 const Login = (props) => {
   // console.log("login props: ", props);
   //where username is is what we're calling the information on state

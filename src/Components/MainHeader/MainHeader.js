@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 class MainHeader extends Component {
-  render() {
+  render(props) {
     return (
       <div>
-        <button>Edit User</button>
+        <button onClick={props.history.push("/Update")}>Edit User</button>
         <button>My Sparing Partners</button>
         <button>Logout</button>
       </div>

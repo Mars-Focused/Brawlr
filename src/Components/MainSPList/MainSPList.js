@@ -18,7 +18,6 @@ const MainSPList = () => {
 
   return (
     <div>
-      <h1>MainSPList</h1>
       <div className="sp_list">
         {SPArr.map((SPid) => (
           <SPBox SPid={SPid} />
