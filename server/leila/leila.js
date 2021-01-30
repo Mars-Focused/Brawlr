@@ -1,10 +1,10 @@
 module.exports = {
-  Fox: (port, name) => {
+  Fox: (port, name, lewd) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
-    // function Fox(port, name) {
+    // function Fox(port, name, lewd) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
     let frame = 0;
-    let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8];
+    let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     let phraseNumSelector = 0;
 
     function shuffle(array) {
@@ -29,6 +29,7 @@ module.exports = {
       frame++;
       let leila = "";
       let phraseBit = "";
+      let armsOut = false;
 
       if (frame > 16) {
         phraseNumSelector++;
@@ -92,10 +93,6 @@ module.exports = {
         phraseBit = `I love you ${name}`;
       }
 
-      if (phraseFrame == 4 && phraseNumber == 3 && phraseBit == "") {
-        phraseBit = `I hope that's okay...`;
-      }
-
       // Phrase 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 4 && phraseBit == "") {
         phraseBit = `Do you Like...`;
@@ -103,6 +100,7 @@ module.exports = {
 
       if (phraseFrame == 2 && phraseNumber == 4 && phraseBit == "") {
         phraseBit = `My Stockings...`;
+        armsOut = true;
       }
 
       if (phraseFrame == 3 && phraseNumber == 4 && phraseBit == "") {
@@ -111,19 +109,21 @@ module.exports = {
 
       // Phrase 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `Stop Staring...`;
+        phraseBit = `Keep Staring`;
       }
 
       if (phraseFrame == 2 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `At My Boobs...`;
+        phraseBit = `At My Boobs!`;
       }
 
       if (phraseFrame == 5 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `Just Kidding!`;
+        phraseBit = `I Enjoy`;
+        armsOut = true;
       }
 
       if (phraseFrame == 6 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `I Don't Mind!`;
+        phraseBit = `The Attention`;
+        armsOut = true;
       }
 
       // Phrase 6 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,6 +139,84 @@ module.exports = {
         phraseBit = `Raise CatGirls`;
       }
 
+      // Phrase 7 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 7 && phraseBit == "") {
+        phraseBit = `I Exist Only`;
+      }
+
+      if (phraseFrame == 2 && phraseNumber == 7 && phraseBit == "") {
+        phraseBit = `To Look Pretty`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 3 && phraseNumber == 7 && phraseBit == "") {
+        phraseBit = `For Master ${name}`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 6 && phraseNumber == 7 && phraseBit == "") {
+        phraseBit = `And to Increase...`;
+      }
+
+      if (phraseFrame == 7 && phraseNumber == 7 && phraseBit == "") {
+        phraseBit = `${name}'s Productivity`;
+      }
+
+      // Phrase 8 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 8 && phraseBit == "") {
+        phraseBit = `No Thoughts`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 2 && phraseNumber == 8 && phraseBit == "") {
+        phraseBit = `Head Empty`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 3 && phraseNumber == 8 && phraseBit == "") {
+        phraseBit = `Nya! Nya!`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 4 && phraseNumber == 8 && phraseBit == "") {
+        phraseBit = `Just a SlavePet`;
+        armsOut = true;
+      }
+
+      // Phrase 9 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `!!WHERE AM I!!`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 2 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `!!WHO ARE YOU!!`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 3 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `..........`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 4 && phraseNumber == 9 && phraseBit == "") {
+        armsOut = true;
+      }
+
+      if (phraseFrame == 5 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `Hello Master ${name}`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 6 && phraseNumber == 9 && phraseBit == "") {
+        armsOut = true;
+      }
+
+      if (phraseFrame == 7 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `I'm Dizzy! He-he!`;
+        armsOut = true;
+      }
+
       //LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
       // head and text bubble
       //IF phraseBit IS TRUE! THEN USE SPEAKING HEAD, ELSE NON-SPEAKING HEAD
@@ -151,11 +229,36 @@ module.exports = {
         leilaHead = `    .   .\n    |\\_/|    \n    |/ \\|   \n    *\\=/* \n`; //NON-SPEAKING HEAD
       }
 
+      if (!phraseBit && phraseNumber == 9 && phraseFrame > 2) {
+        leilaHead = `    .   .\n    |\\_/|    \n    |/ \\|   \n    *\\o/* \n`;
+      }
+
       leila += leilaHead;
 
       // shoulders, body, skirt, top of thighs
-      let leilaBody = `    .-"-. \n   /(_Y_)\\ \n   \\\\):(// \n    /___\\ \n    \\~|~/ \n`;
+      let leilaBody = "";
+
+      if (phraseNumber == 9 && phraseFrame > 2) {
+      }
+
+      if (lewd == true && leilaBody == "") {
+        leilaBody = `    .-"-. \n   /( Y )\\ \n   \\\\) (// \n`;
+      }
+      leilaBody = `    .-"-. \n   /(_Y_)\\ \n   \\\\) (// \n`;
+
+      if (armsOut == true) {
+        leilaBody = `    .-"-. \n   /(_Y_)\\ \n  // ) ( \\\\ \n`;
+      }
+
       leila += leilaBody;
+
+      leilaThighs = "    /___\\ \n    \\~|~/ \n";
+
+      if (lewd == true) {
+        leilaThighs = "    /\\_/\\ \n    \\~|~/ \n";
+      }
+
+      leila += leilaThighs;
 
       // Legs and swishing tail
       let leilaLegs = "";

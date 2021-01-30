@@ -3,8 +3,14 @@ import SPInfoBox from "../SPInfoBox/SPInfoBox";
 
 class SPView extends Component {
   render() {
-    return <div>SPView</div>;
-    <SPInfoBox />;
+    return (
+      <div>
+        <h1>SPView</h1>
+        <div>
+          <SPInfoBox />
+        </div>
+      </div>
+    );
   }
 }
 
