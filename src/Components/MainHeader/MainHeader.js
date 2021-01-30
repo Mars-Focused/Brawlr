@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class MainHeader extends Component {
   // constructor(props) {
   //   super(props);
   //   this.state = {};
   // }
+  logout() {
+    axios.get("/auth/logout").catch((err) => console.log(err));
+  }
 
   render() {
-    // const { history } = this.props;
     // console.log(this.props);
     return (
       <div>
@@ -17,7 +20,12 @@ class MainHeader extends Component {
         <button onClick={() => this.props.history.push("/SPView")}>
           My Sparing Partners
         </button>
-        <button>Logout</button>
+        <button
+          className="login_btn"
+          onClick={(this.logout, () => this.props.history.push("/"))}
+        >
+          Logout
+        </button>
       </div>
     );
   }

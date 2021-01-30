@@ -1,12 +1,25 @@
 module.exports = {
-  Fox: (port, name, lewd) => {
+  Fox: (port, name, swimsuit) => {
+    console.clear();
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
-    // function Fox(port, name, lewd) {
+    // function Fox(port, name, swimsuit) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
     let frame = 0;
     let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     let phraseNumSelector = 0;
 
+    //If you're reading this... Then you've Found the Virtual Waifu I've been making in my spare time
+    //Her name is Leila.Fox and I animated her with console.log and console.clear
+    //Her movements sync to music at 128 bpm
+    //She Shuffles her phrases rather than randomly selecting one with math.random()
+    //Her animations are easy to mutate with the armsOut and mouthOpen variables
+    //Mouth open will Intuitively update when phraseBit is true
+    //Explore it if you would like,
+    //Copy past this into your own project,
+    //Have fun
+    //but DO NOT! ATTEMPT TO PUSH ~YOUR~ CHANGES TO ~MY~ GITHUB WITHOUT PERMISSION.
+
+    //This is the Fisher-Yates Method of Shuffling an array.
     function shuffle(array) {
       var m = array.length,
         t,
@@ -67,8 +80,8 @@ module.exports = {
       /*
     PHRASE REFERENCE COPY AND PAST THE 4 LINES BELOW TO START A PHRASE
     // Phrase X ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if (phraseFrame == frameNum && phraseNumber == phraseNum && phraseBit == "") {
-      phraseBit = `myPhrase`
+    if (phraseFrame == Y && phraseNumber == Z && phraseBit == "") {
+      phraseBit = `PutPhraseBitHere`
     }
     */
       // Phrase 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +193,7 @@ module.exports = {
       }
 
       if (phraseFrame == 4 && phraseNumber == 8 && phraseBit == "") {
-        phraseBit = `Just a SlavePet`;
+        phraseBit = `Just a Pet`;
         armsOut = true;
         mouthOpen = 2;
       }
@@ -253,15 +266,12 @@ module.exports = {
 
       leila += leilaMouth;
 
-      // shoulders, body, skirt, top of thighs
+      // shoulders, bust, waist
       let leilaBody = "";
 
       if (phraseNumber == 9 && phraseFrame > 2) {
       }
 
-      if (lewd == true && leilaBody == "") {
-        leilaBody = `    .-"-. \n   /( Y )\\ \n   \\\\) (// \n`;
-      }
       leilaBody = `    .-"-. \n   /(_Y_)\\ \n   \\\\) (// \n`;
 
       if (armsOut == true) {
@@ -270,9 +280,10 @@ module.exports = {
 
       leila += leilaBody;
 
+      //thighs and hips
       leilaThighs = "    /___\\ \n    \\~|~/ \n";
 
-      if (lewd == true) {
+      if (swimsuit == true) {
         leilaThighs = "    /\\_/\\ \n    \\~|~/ \n";
       }
 
