@@ -28,6 +28,7 @@ const AddContactInfo = (props) => {
         onChange={(e) => setInput(e.target.value)}
       />
       <button onClick={sendInfo}>Add</button>
+      <button onClick={() => props.history.push("/Main")}>Go To Main</button>
     </div>
   );
 };

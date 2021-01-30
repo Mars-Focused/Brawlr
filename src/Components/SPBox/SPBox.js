@@ -4,13 +4,6 @@ import { connect } from "react-redux";
 
 const SPBox = (props) => {
   const [SPObj, setSPObj] = useState({});
-  // function getRecSparingPartnerInfo() {
-  // let { SPid } = props;
-  // axios.get(`/api/get_sp_info/${SPid.user_id}`).then((res) => {
-  //   console.log("SPBox, res.data[0]:", res.data[0]);
-  //   setSPObj(res.data[0]);
-  // });
-  // }
 
   useEffect(() => {
     let { SPid } = props;

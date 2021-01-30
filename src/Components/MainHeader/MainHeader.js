@@ -14,7 +14,9 @@ class MainHeader extends Component {
         <button onClick={() => this.props.history.push("/Update")}>
           Edit User
         </button>
-        <button>My Sparing Partners</button>
+        <button onClick={() => this.props.history.push("/SPView")}>
+          My Sparing Partners
+        </button>
         <button>Logout</button>
       </div>
     );
