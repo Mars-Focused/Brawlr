@@ -4,7 +4,6 @@ import axios from "axios";
 class MainHeader extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
     this.logout = this.logout.bind(this);
   }
 
