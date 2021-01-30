@@ -319,6 +319,15 @@ module.exports = {
         phraseBit = `Focus on the Goal`;
       }
 
+      // Phrase 12 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 12 && phraseBit == "") {
+        phraseBit = `Over 400 Lines`;
+      }
+
+      if (phraseFrame == 1 && phraseNumber == 12 && phraseBit == "") {
+        phraseBit = `Of Pure Sexy!`;
+      }
+
       //LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
       // head and text bubble
       //IF phraseBit IS TRUE! THEN USE SPEAKING HEAD, ELSE NON-SPEAKING HEAD
