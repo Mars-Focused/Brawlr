@@ -30,6 +30,7 @@ module.exports = {
       let leila = "";
       let phraseBit = "";
       let armsOut = false;
+      let mouthOpen = 0;
 
       if (frame > 16) {
         phraseNumSelector++;
@@ -181,6 +182,7 @@ module.exports = {
       if (phraseFrame == 4 && phraseNumber == 8 && phraseBit == "") {
         phraseBit = `Just a SlavePet`;
         armsOut = true;
+        mouthOpen = 2;
       }
 
       // Phrase 9 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,10 +199,12 @@ module.exports = {
       if (phraseFrame == 3 && phraseNumber == 9 && phraseBit == "") {
         phraseBit = `..........`;
         armsOut = true;
+        mouthOpen = 2;
       }
 
       if (phraseFrame == 4 && phraseNumber == 9 && phraseBit == "") {
         armsOut = true;
+        mouthOpen = 2;
       }
 
       if (phraseFrame == 5 && phraseNumber == 9 && phraseBit == "") {
@@ -224,16 +228,30 @@ module.exports = {
       let leilaHead = "";
 
       if (phraseBit && leilaHead == "") {
-        leilaHead = `(${phraseBit})\n  \\ |\\_/|    \n    |/ \\|   \n    *\\o/* \n`; //SPEAKING HEAD
+        leilaHead = `(${phraseBit})\n  \\ |\\_/|    \n    |/ \\|   \n`; //SPEAKING HEAD
+        if (mouthOpen == 0) {
+          mouthOpen = 1;
+        }
       } else {
-        leilaHead = `    .   .\n    |\\_/|    \n    |/ \\|   \n    *\\=/* \n`; //NON-SPEAKING HEAD
-      }
-
-      if (!phraseBit && phraseNumber == 9 && phraseFrame > 2) {
-        leilaHead = `    .   .\n    |\\_/|    \n    |/ \\|   \n    *\\o/* \n`;
+        leilaHead = `    .   .\n    |\\_/|    \n    |/ \\|   \n`; //NON-SPEAKING HEAD
       }
 
       leila += leilaHead;
+
+      leilaMouth = "";
+
+      if (mouthOpen) {
+        if (mouthOpen == 1) {
+          leilaMouth = `    *\\o/* \n`;
+        }
+        if (mouthOpen == 2) {
+          leilaMouth = `    *\\Q/* \n`;
+        }
+      } else {
+        leilaMouth = `    *\\=/* \n`;
+      }
+
+      leila += leilaMouth;
 
       // shoulders, body, skirt, top of thighs
       let leilaBody = "";
