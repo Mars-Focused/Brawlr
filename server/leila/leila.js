@@ -44,6 +44,15 @@ module.exports = {
       let phraseBit = "";
       let armsOut = false;
       let mouthOpen = 0;
+      let reset = "\x1b[0m";
+      let underscore = "\x1b[4m";
+      let dim = "\x1b[2m";
+      let bright = "\x1b[1m";
+
+      let color = "";
+
+      let lightOff = reset + dim;
+      let lightOn = reset + bright;
 
       if (frame > 16) {
         phraseNumSelector++;
@@ -58,6 +67,31 @@ module.exports = {
       }
 
       phraseNumber = phraseNumArr[phraseNumSelector];
+      weirdNumber = Math.round((frame * phraseNumSelector) / 6);
+
+      switch (weirdNumber % 7) {
+        case 0:
+          color = "\x1b[30m";
+          break;
+        case 1:
+          color = "\x1b[36m";
+          break;
+        case 2:
+          color = "\x1b[32m";
+          break;
+        case 3:
+          color = "\x1b[35m";
+          break;
+        case 4:
+          color = "\x1b[34m";
+          break;
+        case 5:
+          color = "\x1b[33m";
+          break;
+        case 6:
+          color = "\x1b[31m";
+          break;
+      }
 
       // Connection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -78,7 +112,7 @@ module.exports = {
       }
 
       /*
-    PHRASE REFERENCE COPY AND PAST THE 4 LINES BELOW TO START A PHRASE
+      PHRASE REFERENCE COPY AND PAST THE 4 LINES BELOW TO START A PHRASE
     // Phrase X ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     if (phraseFrame == Y && phraseNumber == Z && phraseBit == "") {
       phraseBit = `PutPhraseBitHere`
@@ -115,10 +149,12 @@ module.exports = {
       if (phraseFrame == 2 && phraseNumber == 4 && phraseBit == "") {
         phraseBit = `My Stockings...`;
         armsOut = true;
+        mouthOpen = 3;
       }
 
       if (phraseFrame == 3 && phraseNumber == 4 && phraseBit == "") {
         phraseBit = `Master ${name}?`;
+        mouthOpen = 3;
       }
 
       // Phrase 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,6 +164,7 @@ module.exports = {
 
       if (phraseFrame == 2 && phraseNumber == 5 && phraseBit == "") {
         phraseBit = `At My Boobs!`;
+        mouthOpen = 3;
       }
 
       if (phraseFrame == 5 && phraseNumber == 5 && phraseBit == "") {
@@ -230,7 +267,7 @@ module.exports = {
       }
 
       if (phraseFrame == 7 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `I'm Dizzy! He-he!`;
+        phraseBit = `I Feel Dizzy! He-he!`;
         armsOut = true;
       }
 
@@ -260,8 +297,26 @@ module.exports = {
         armsOut = true;
       }
 
-      if (phraseFrame == 8 && phraseNumber == 10 && phraseBit == "") {
+      if (phraseFrame == 7 && phraseNumber == 10 && phraseBit == "") {
         phraseBit = `...i just hope it's me...`;
+        mouthOpen = 3;
+      }
+
+      // Phrase 11 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 11 && phraseBit == "") {
+        phraseBit = `Repeat after me`;
+      }
+
+      if (phraseFrame == 2 && phraseNumber == 11 && phraseBit == "") {
+        phraseBit = `Focus on the Goal`;
+      }
+
+      if (phraseFrame == 4 && phraseNumber == 11 && phraseBit == "") {
+        phraseBit = `Focus on the Goal`;
+      }
+
+      if (phraseFrame == 6 && phraseNumber == 11 && phraseBit == "") {
+        phraseBit = `Focus on the Goal`;
       }
 
       //LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
@@ -271,12 +326,12 @@ module.exports = {
       let leilaHead = "";
 
       if (phraseBit && leilaHead == "") {
-        leilaHead = `(${phraseBit})\n  \\ |\\_/|    \n    |/ \\|   \n`; //SPEAKING HEAD
+        leilaHead = `(${reset}${phraseBit}${bright})\n  \\ ${color}|\\${lightOn}_${color}/|    \n    |${lightOn}/ \\${color}|${lightOn}\n`; //SPEAKING HEAD
         if (mouthOpen == 0) {
           mouthOpen = 1;
         }
       } else {
-        leilaHead = `    .   .\n    |\\_/|    \n    |/ \\|   \n`; //NON-SPEAKING HEAD
+        leilaHead = `${color}    .   .\n    |\\${lightOn}_${color}/|    \n    |${lightOn}/ \\${color}|${lightOn}\n`; //NON-SPEAKING HEAD
       }
 
       leila += leilaHead;
@@ -290,6 +345,9 @@ module.exports = {
         if (mouthOpen == 2) {
           leilaMouth = `    *\\Q/* \n`;
         }
+        if (mouthOpen == 3) {
+          leilaMouth = `    *\\w/* \n`;
+        }
       } else {
         leilaMouth = `    *\\=/* \n`;
       }
@@ -302,30 +360,32 @@ module.exports = {
       if (phraseNumber == 9 && phraseFrame > 2) {
       }
 
-      leilaBody = `    .-"-. \n   /(_Y_)\\ \n   \\\\) (// \n`;
+      leilaBody = `    .-"-. \n   /${lightOff}(${underscore} Y ${reset})${lightOn}\\ \n   \\\\${lightOff}) (${lightOn}// \n`;
 
       if (armsOut == true) {
-        leilaBody = `    .-"-. \n   /(_Y_)\\ \n  // ) ( \\\\ \n`;
+        leilaBody = `    .-"-. \n   /${lightOff}(${underscore} Y ${reset})${lightOn}\\ \n  // ${lightOff}) (${lightOn} \\\\ \n`;
       }
 
       leila += leilaBody;
 
       //thighs and hips
-      leilaThighs = "    /___\\ \n    \\~|~/ \n";
+      leilaSkirt = `${lightOff}   .${underscore}/( )\\${reset}. ${lightOn}\n`;
+      leilaThighs = `    \\${underscore} | ${lightOn}/ \n`;
 
       if (swimsuit == true) {
-        leilaThighs = "    /\\_/\\ \n    \\~|~/ \n";
+        // leilaThighs = "    /\\_/\\ \n    \\~|~/ \n";
+        leilaSkirt = `${lightOff}    /\\_/\\${lightOn}\n`;
       }
-
+      leila += leilaSkirt;
       leila += leilaThighs;
 
       // Legs and swishing tail
       let leilaLegs = "";
 
       if (frame % 2 == 0 && leilaLegs == "") {
-        leilaLegs += `    /\\|/ \n/\\_/ /|\\ \n\\___/\\|/ \n     /Y\\`;
+        leilaLegs += `    ${color}/${lightOff}\\|/ ${lightOn}\n${color}/\\_/ ${lightOff}/|\\${lightOn} \n${color}\\___/${lightOff}\\|/ \n     /Y\\${lightOn}`;
       } else {
-        leilaLegs = `     \\|/\\ \n     /|\\ \\_/\\ \n     \\|/\\___/ \n     /Y\\`;
+        leilaLegs = `     ${lightOff}\\|/${lightOn}${color}\\ \n     ${lightOff}/|\\${lightOn} ${color}\\_/\\ \n     ${lightOff}\\|/${lightOn}${color}\\___/ \n     ${lightOff}/Y\\${lightOn}`;
       }
 
       leila += leilaLegs;
