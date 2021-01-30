@@ -21,7 +21,7 @@ module.exports = {
     const db = req.app.get("db");
     const { contactInfo } = req.body;
     const { id } = req.session.user;
-    console.log(id);
+    // console.log(id);
     await db.edit_user(id, contactInfo);
     return res.sendStatus(200);
   },

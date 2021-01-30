@@ -16,7 +16,7 @@ const Login = (props) => {
     if (e) e.preventDefault();
     try {
       const res = await axios.post("/auth/register", { username, password });
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data) {
         props.history.push("/Update");
       }

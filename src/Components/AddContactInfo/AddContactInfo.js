@@ -12,15 +12,12 @@ const AddContactInfo = (props) => {
   async function sendInfo(e) {
     if (e) e.preventDefault();
     // try {
-    console.log(contactInfo);
+    console.log("contactInfo:", contactInfo);
     const res = await axios.put("/auth/add_contact_info", {
       contactInfo: contactInfo,
     });
+    console.log("res.data:", res.data);
     if (res.data) props.history.push("/Main");
-    // } catch (e) {
-    //   alert("email didn't update something went wrong");
-    // }
-    // const { username } = reduxState;
   }
   console.log(props);
   return (
