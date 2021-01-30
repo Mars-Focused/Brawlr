@@ -2,12 +2,19 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class MainHeader extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {};
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.logout = this.logout.bind(this);
+  }
+
   logout() {
-    axios.get("/auth/logout").catch((err) => console.log(err));
+    axios
+      .get("/auth/logout")
+      .then(() => {
+        this.props.history.push("/");
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -20,10 +27,7 @@ class MainHeader extends Component {
         <button onClick={() => this.props.history.push("/SPView")}>
           My Sparing Partners
         </button>
-        <button
-          className="login_btn"
-          onClick={(this.logout, () => this.props.history.push("/"))}
-        >
+        <button className="login_btn" onClick={this.logout}>
           Logout
         </button>
       </div>

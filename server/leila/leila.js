@@ -1,9 +1,9 @@
 module.exports = {
   Fox: (port, name, swimsuit) => {
-    console.clear();
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
     // function Fox(port, name, swimsuit) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
+    console.clear();
     let frame = 0;
     let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     let phraseNumSelector = 0;
@@ -200,12 +200,12 @@ module.exports = {
 
       // Phrase 9 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `!!WHERE AM I!!`;
+        phraseBit = `WHERE AM I???`;
         armsOut = true;
       }
 
       if (phraseFrame == 2 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `!!WHO ARE YOU!!`;
+        phraseBit = `WHO ARE YOU???`;
         armsOut = true;
       }
 
@@ -232,6 +232,36 @@ module.exports = {
       if (phraseFrame == 7 && phraseNumber == 9 && phraseBit == "") {
         phraseBit = `I'm Dizzy! He-he!`;
         armsOut = true;
+      }
+
+      // Phrase 10 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 10 && phraseBit == "") {
+        phraseBit = `GO GO GO`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 2 && phraseNumber == 10 && phraseBit == "") {
+        phraseBit = `WRITE MORE CODE`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 3 && phraseNumber == 10 && phraseBit == "") {
+        phraseBit = `OR SOMEONE!`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 4 && phraseNumber == 10 && phraseBit == "") {
+        phraseBit = `WILL BE!`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 5 && phraseNumber == 10 && phraseBit == "") {
+        phraseBit = `!!!PUNISHED!!!`;
+        armsOut = true;
+      }
+
+      if (phraseFrame == 8 && phraseNumber == 10 && phraseBit == "") {
+        phraseBit = `...i just hope it's me...`;
       }
 
       //LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
