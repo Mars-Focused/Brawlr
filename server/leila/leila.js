@@ -9,6 +9,7 @@ module.exports = {
     // let phraseNumArr = [15];
     let phraseNumSelector = 0;
     let animSpeed = 937.5;
+    let Chaos = 0;
 
     //If you're reading this... Then you've Found the Virtual Waifu I've been making in my spare time
     //Her name is Leila.Fox and I animated her with console.log and console.clear
@@ -49,7 +50,7 @@ module.exports = {
       let mouthOpen = 0;
       let reset = "\x1b[0m";
       let underscore = "\x1b[4m";
-      let dim = "\x1b[2m";
+      // let dim = "\x1b[2m";
       let bright = "\x1b[1m";
       let black = "\x1b[30m";
 
@@ -61,6 +62,7 @@ module.exports = {
       if (frame > 16) {
         phraseNumSelector++;
         frame = 9;
+        Chaos = 0;
       }
 
       phraseFrame = frame - 8;
@@ -73,10 +75,16 @@ module.exports = {
       phraseNumber = phraseNumArr[phraseNumSelector];
       weirdNumber = phraseNumArr[0];
 
-      if (phraseNumber == 15) {
-        animSpeed = 99.375;
-      } else {
-        animSpeed = 937.5;
+      switch (Chaos) {
+        case 0:
+          animSpeed = 937.5;
+          break;
+        case 1:
+          animSpeed = 198.75;
+          break;
+        case 2:
+          animSpeed = 1875;
+          break;
       }
 
       switch (weirdNumber % 6) {
@@ -262,6 +270,7 @@ module.exports = {
         phraseBit = `..........`;
         armsOut = 1;
         mouthOpen = 2;
+        Chaos = 2;
       }
 
       if (phraseFrame == 4 && phraseNumber == 9 && phraseBit == "") {
@@ -391,6 +400,7 @@ module.exports = {
         phraseBit = `!!!!!!!!!!!!`;
         mouthOpen = Math.floor(Math.random() * 4);
         armsOut = Math.floor(Math.random() * 3);
+        Chaos = 1;
       }
 
       //LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
