@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 const SPBox = (props) => {
   const [SPObj, setSPObj] = useState({});
+  // console.log("SPBox-props", props);
 
   useEffect(() => {
     let { SPid } = props;
