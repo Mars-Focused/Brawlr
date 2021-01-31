@@ -1,0 +1,32 @@
+$black: #191516;
+$blackIsh: #2b2538;
+$blue: #0aceff;
+$purple: #54457f;
+$purpleIsh: #58457f;
+
+@mixin brawlr-button {
+  box-shadow: 0px 10px 14px -7p $blue;
+  background: linear-gradient(to bottom, #58457f 5%, #2b2538 100%);
+  background-color: #58457f;
+  border-radius: 4px;
+  border: 1px solid #191516;
+  display: inline-block;
+  cursor: pointer;
+  color: $blue;
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 12px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #191516;
+}
+
+@mixin brawlr-hover {
+  background: linear-gradient(to bottom, #2b2538 5%, #58457f 100%);
+  background-color: #2b2538;
+}
+
+@mixin brawlr-active {
+  position: relative;
+  top: 1px;
+}

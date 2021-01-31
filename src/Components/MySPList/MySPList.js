@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import SPInfoBox from "../SPInfoBox/SPInfoBox";
@@ -11,15 +11,18 @@ import SPInfoBox from "../SPInfoBox/SPInfoBox";
 
 const MySPList = () => {
   const [mySPArr, setMySPArr] = useState([]);
-  function getMySparingPartners() {
-    axios.get("/api/get_my_sp").then((res) => {
-      console.log(res.data);
-      setMySPArr(res.data);
-    });
-  }
+  const ref = useRef(); // <- this was added
 
   useEffect(() => {
-    getMySparingPartners();
+    const prevSPArr = ref.current;
+    ref.current = mySPArr; // <- this was added
+    if (prevSPArr != mySPArr) {
+      // ^^ this was changed from state
+      axios.get("/api/get_my_sp").then((res) => {
+        console.log(res.data);
+        setMySPArr(res.data);
+      });
+    }
   }, []);
 
   return (

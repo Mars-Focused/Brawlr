@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Login.scss";
 import { connect } from "react-redux";
 import { loginUser } from "../../Redux/userReducer";
 
@@ -40,26 +41,31 @@ const Login = (props) => {
   }
 
   return (
-    <div>
-      <h3>Login</h3>
-      <input
-        type="text"
-        className="username-input"
-        placeholder="Name"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        className="password-input"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button className="register-btn" type="submit" onClick={register}>
-        Register
-      </button>
-      <button className="login-btn" type="submit" onClick={login}>
-        Login
-      </button>
+    <div className="login">
+      <div className="login-card">
+        <h1 className="title-box">
+          <h1 className="title">Brawlr</h1>
+          <h3 className="sub-title">Comradery Thru Combat</h3>
+        </h1>
+        <input
+          type="text"
+          className="username-input"
+          placeholder="Name"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          className="password-input"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className="register-btn" type="submit" onClick={register}>
+          Register
+        </button>
+        <button className="login-btn" type="submit" onClick={login}>
+          Login
+        </button>
+      </div>
     </div>
   );
 };
