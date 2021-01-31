@@ -42,10 +42,10 @@ module.exports = {
     const { sp } = req.params;
     const { id } = req.session.user;
     const db = req.app.get("db");
-    //get the ID of the other sp
+    // get the ID of the other sp
     const spInfo = await db.get_user(sp);
+    console.log("spInfo:", spInfo);
     const { user_id } = spInfo[0];
-    console.log(user_id);
     await db.delete_sp(id, user_id);
     res.sendStatus(200);
   },

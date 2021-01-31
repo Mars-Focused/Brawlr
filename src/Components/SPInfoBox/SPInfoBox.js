@@ -14,14 +14,18 @@ const SPInfoBox = (props) => {
     });
   }, []);
 
-  function deleteSparringPartner() {}
+  const { username, contact_info } = mySPObj;
 
-  const { username } = mySPObj;
+  function deleteSparringPartner() {
+    let { mySPid } = props;
+    axios.delete(`/api/del_sp/${mySPid.username}`);
+  }
 
   return (
     <div>
       <div>{username}</div>
-      <button onClick={deleteSparringPartner()}>Remove User</button>
+      <div>{contact_info}</div>
+      <button onClick={() => deleteSparringPartner()}>Remove User</button>
     </div>
   );
 };
