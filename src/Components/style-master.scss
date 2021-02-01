@@ -10,6 +10,15 @@ $grey: #a2adc0;
 $dark-grey: #8e8a7f;
 $pink: #ff9fb2;
 
+@mixin center-all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
 @mixin brawlr-element {
   box-shadow: 1px 1px 3px $cream;
   background: linear-gradient(to bottom, $navy 50%, $black 100%);
@@ -46,4 +55,5 @@ $pink: #ff9fb2;
   flex-wrap: nowrap;
   align-content: center;
   align-items: center;
+  text-align: center;
 }

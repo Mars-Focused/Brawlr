@@ -1,0 +1,10 @@
+@import "../style-master.scss";
+
+.update-box {
+  @include center-all();
+}
+
+.text {
+  @include brawlr-text();
+  font-size: 32px;
+}
