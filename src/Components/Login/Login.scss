@@ -1,0 +1,150 @@
+@import "../style-master.scss";
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  height: auto;
+  width: 85vw;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+  width: 90vw;
+}
+
+.title {
+  @include brawlr-text();
+  font-size: 4rem;
+  height: 50px;
+}
+
+.sub-title {
+  @include brawlr-text();
+  font-size: 1.2rem;
+  width: 80vw;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 90vw;
+}
+
+.description {
+  @include brawlr-text();
+  margin: 3px;
+  max-width: 250px;
+}
+
+.username-input {
+  @include brawlr-element();
+  font-size: 13px;
+  width: 166px;
+  margin: 2px;
+}
+
+.username-input:active {
+  @include brawlr-active();
+}
+
+.register-btn {
+  @include brawlr-element();
+  font-size: 13px;
+  width: 83px;
+  margin: 2px;
+}
+
+.register-btn:hover {
+  @include brawlr-hover();
+}
+
+.register-btn:active {
+  @include brawlr-active();
+}
+
+.password-input {
+  @include brawlr-element();
+  font-size: 13px;
+  width: 166px;
+  margin: 2px;
+}
+
+.password-input:active {
+  @include brawlr-active();
+}
+
+.login-btn {
+  @include brawlr-element();
+  font-size: 13px;
+  width: 83px;
+  margin: 2px;
+}
+
+.login-btn:hover {
+  @include brawlr-hover();
+}
+
+.login-btn:active {
+  @include brawlr-active();
+}
+
+@media (min-width: 600px) {
+  .username-input {
+    font-size: 20px;
+    width: 300px;
+    margin: 4px;
+  }
+  .password-input {
+    font-size: 20px;
+    width: 300px;
+    margin: 4px;
+  }
+  .register-btn {
+    font-size: 20px;
+    width: 150px;
+    margin: 4px;
+  }
+  .login-btn {
+    font-size: 20px;
+    width: 150px;
+    margin: 4px;
+  }
+  .title {
+    font-size: 8rem;
+    height: 100px;
+  }
+
+  .sub-title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    max-width: 500px;
+  }
+}
