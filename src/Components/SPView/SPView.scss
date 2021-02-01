@@ -1,7 +1,13 @@
 @import "../style-master.scss";
 
+.spv-upper-box {
+  @include top-row();
+}
+
 .spv-text {
   @include brawlr-text();
+  text-align: center;
+  font-size: 16px;
   position: absolute;
   top: 10px;
   width: 148px;

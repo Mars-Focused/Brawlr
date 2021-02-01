@@ -6,7 +6,7 @@ import "./SPView.scss";
 class SPView extends Component {
   render() {
     return (
-      <div>
+      <div className="spv-upper-box">
         <div className="spv-text">My Sparring Partners</div>
         <div>
           <MySPList />
