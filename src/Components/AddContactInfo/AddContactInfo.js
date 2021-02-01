@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import "./AddContactInfo.scss";
 
 const AddContactInfo = (props) => {
   // in order to AddContactInfo to our user we first need to get
@@ -17,18 +18,27 @@ const AddContactInfo = (props) => {
       contactInfo: contactInfo,
     });
     console.log("res.data:", res.data);
-    if (res.data) props.history.push("/Main");
+    if (res.data) {
+      alert(`Your Contact info has been updated.`);
+    }
   }
+
   console.log(props);
   return (
-    <div>
-      <input
-        placeholder="AddContactInfo"
-        className="CIInput"
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button onClick={sendInfo}>Add</button>
-      <button onClick={() => props.history.push("/Main")}>Go To Main</button>
+    <div className="aci-box">
+      <div className="contact-info-row">
+        <input
+          placeholder="AddContactInfo"
+          className="aci-input"
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button className="aci-btn" onClick={sendInfo}>
+          Add
+        </button>
+      </div>
+      <button className="goto-main" onClick={() => props.history.push("/Main")}>
+        Go To Main
+      </button>
     </div>
   );
 };

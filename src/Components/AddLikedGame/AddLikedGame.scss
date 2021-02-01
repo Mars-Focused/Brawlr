@@ -1,1 +1,34 @@
 @import "../style-master.scss";
+
+.liked-game-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+}
+
+.alg-input {
+  @include brawlr-element();
+  margin: 2px;
+  width: 125px;
+}
+
+.alg-button {
+  @include brawlr-element();
+  margin: 2px;
+  width: 72px;
+}
+
+@media (min-width: 600px) {
+  .alg-box {
+    width: 500px;
+  }
+  .liked-game-row {
+    width: 460px;
+  }
+  .alg-input {
+    width: 330px;
+  }
+}

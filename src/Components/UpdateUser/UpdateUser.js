@@ -6,7 +6,8 @@ class UpdateUser extends Component {
   render() {
     return (
       <div className="update-box">
-        <div className="text">Add Games and your Contact Info here!</div>
+        <div className="text">Add Games and</div>
+        <div className="text">Contact Info here!</div>
         <AddLikedGame {...this.props} />
         <AddContactInfo {...this.props} />
       </div>

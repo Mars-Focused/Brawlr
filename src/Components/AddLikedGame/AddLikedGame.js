@@ -1,8 +1,9 @@
 import axios from "axios";
+import "./AddLikedGame.scss";
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-const AddLikedGame = (props) => {
+const AddLikedGame = () => {
   const [game, setGame] = useState("");
 
   async function sendInfo(e) {
@@ -16,13 +17,15 @@ const AddLikedGame = (props) => {
   }
 
   return (
-    <div>
+    <div className="liked-game-row">
       <input
         placeholder="AddLikedGame"
-        className="CIInput"
+        className="alg-input"
         onChange={(e) => setGame(e.target.value)}
       />
-      <button onClick={sendInfo}>Add</button>
+      <button className="alg-button" onClick={sendInfo}>
+        Add
+      </button>
     </div>
   );
 };
