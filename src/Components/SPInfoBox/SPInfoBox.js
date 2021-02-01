@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import "./SPInfoBox.scss";
 
 const SPInfoBox = (props) => {
   const [mySPObj, setMySPObj] = useState({});
@@ -22,10 +23,15 @@ const SPInfoBox = (props) => {
   }
 
   return (
-    <div>
-      <div className="big-text">{username}</div>
-      <div className="text">{contact_info}</div>
-      <button onClick={() => deleteSparringPartner()}>Remove User</button>
+    <div className="info-box">
+      <div className="username-text">-{username}-</div>
+      <div className="info-box-text">{contact_info}</div>
+      <button
+        className="remove-sp-button"
+        onClick={() => deleteSparringPartner()}
+      >
+        Remove User
+      </button>
     </div>
   );
 };

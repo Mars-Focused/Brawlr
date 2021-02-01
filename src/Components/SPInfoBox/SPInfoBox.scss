@@ -1,1 +1,17 @@
 @import "../style-master.scss";
+
+.info-box {
+  @include center-top;
+}
+
+.username-text {
+  @include brawlr-text();
+}
+
+.info-box-text {
+  @include brawlr-text();
+}
+
+.remove-sp-button {
+  @include brawlr-element();
+}

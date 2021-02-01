@@ -1,1 +1,8 @@
 @import "../style-master.scss";
+
+.spv-text {
+  @include brawlr-text();
+  position: absolute;
+  top: 10px;
+  width: 148px;
+}

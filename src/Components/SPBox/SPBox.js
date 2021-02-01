@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import "./SPBox.scss";
 
 const SPBox = (props) => {
   const [SPObj, setSPObj] = useState({});
