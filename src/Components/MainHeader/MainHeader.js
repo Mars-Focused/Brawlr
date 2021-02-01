@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./MainHeader.scss";
 
 class MainHeader extends Component {
   constructor(props) {
@@ -19,11 +20,17 @@ class MainHeader extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div>
-        <button onClick={() => this.props.history.push("/Update")}>
+      <div className="header-box">
+        <button
+          className="edit_btn"
+          onClick={() => this.props.history.push("/Update")}
+        >
           Edit User
         </button>
-        <button onClick={() => this.props.history.push("/SPView")}>
+        <button
+          className="sp_btn"
+          onClick={() => this.props.history.push("/SPView")}
+        >
           My Sparing Partners
         </button>
         <button className="login_btn" onClick={this.logout}>

@@ -1,1 +1,22 @@
 @import "../style-master.scss";
+
+.header-box {
+  position: absolute;
+  top: 10px;
+  width: 95vw;
+}
+
+.edit_btn {
+  @include brawlr-element;
+  margin: 2px;
+}
+
+.sp_btn {
+  @include brawlr-element;
+  margin: 2px;
+}
+
+.login_btn {
+  @include brawlr-element;
+  margin: 2px;
+}

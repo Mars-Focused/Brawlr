@@ -1,20 +1,33 @@
-$dark-black: #1f1b17;
+// Main Pallette
 $black: #191516;
-$blackIsh: #2b2538;
-$blue: #0aceff;
 $purple: #54457f;
-$purpleIsh: #58457f;
+$blue: #0aceff;
+$pink: #ff9fb2;
 $cream: #eff0d1;
+
+// Mixed Pallette
+$dark-black: #1f1b17;
+$blackIsh: #2b2538;
+$purpleIsh: #58457f;
 $navy: #283557;
 $grey: #a2adc0;
 $dark-grey: #8e8a7f;
-$pink: #ff9fb2;
 
+// Mixins
 @mixin center-all {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+@mixin center-top {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-content: stretch;
   align-items: center;
 }

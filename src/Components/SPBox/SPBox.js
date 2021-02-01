@@ -18,7 +18,7 @@ const SPBox = (props) => {
 
   return (
     <div>
-      <h1>{username}</h1>
+      <div className="text">{username}</div>
     </div>
   );
 };
