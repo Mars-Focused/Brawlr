@@ -1,5 +1,3 @@
-import "./App.css";
-import "./App.css";
 import { Route, HashRouter, Switch } from "react-router-dom";
 import Login from "./Components/Login/Login";
 import Update from "./Components/UpdateUser/UpdateUser";

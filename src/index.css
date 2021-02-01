@@ -1,8 +1,22 @@
 body {
   margin: 0;
-  background: url(https://cdn.discordapp.com/attachments/770390198344613899/805508217886736415/unknown.png);
+  background: url(https://cdn.discordapp.com/attachments/770390198344613899/805723365804736553/Brawlr_Background_Mobile.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+@media (orientation: landscape) {
+  body {
+    background: url(https://cdn.discordapp.com/attachments/770390198344613899/805657086565285958/Brawlr_background_Laptop.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 }

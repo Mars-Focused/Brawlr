@@ -1,8 +1,14 @@
+$dark-black: #1f1b17;
 $black: #191516;
 $blackIsh: #2b2538;
 $blue: #0aceff;
 $purple: #54457f;
 $purpleIsh: #58457f;
+$cream: #eff0d1;
+$navy: #283557;
+$grey: #a2adc0;
+$dark-grey: #8e8a7f;
+$pink: #ff9fb2;
 
 @mixin brawlr-button {
   box-shadow: 0px 10px 14px -7p $blue;
