@@ -23,8 +23,8 @@ const SPInfoBox = (props) => {
 
   return (
     <div>
-      <div>{username}</div>
-      <div>{contact_info}</div>
+      <div className="big-text">{username}</div>
+      <div className="text">{contact_info}</div>
       <button onClick={() => deleteSparringPartner()}>Remove User</button>
     </div>
   );

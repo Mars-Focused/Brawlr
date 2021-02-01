@@ -6,7 +6,7 @@ class SPView extends Component {
   render() {
     return (
       <div>
-        <h1>SPView</h1>
+        <div className="text">SPView</div>
         <div>
           <MySPList />
         </div>
