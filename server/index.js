@@ -6,7 +6,7 @@ const authCtrl = require("./controllers/authController");
 const gameCtrl = require("./controllers/gameController");
 const spCtrl = require("./controllers/sPartnerController");
 const Leila = require("./leila/leila");
-// const auth = require("./middleware/authMiddleware");
+const path = require("path");
 
 const PORT = 5000;
 
@@ -45,5 +45,11 @@ app.delete("/api/del_sp/:sp", spCtrl.delSP);
 app.get("/api/get_sp_info/:sp", spCtrl.getSPInfo);
 
 app.post("/api/add_game", gameCtrl.addGame);
+
+app.get(express.static(__dirname + "/../build"));
+
+app.get("*", (res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.listen(PORT, () => console.log(`...LOADING...`));

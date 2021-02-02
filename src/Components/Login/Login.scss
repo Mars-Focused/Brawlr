@@ -63,7 +63,7 @@ body {
 }
 
 .username-input {
-  @include brawlr-element();
+  @include brawlr-element-text();
   font-size: 13px;
   width: 166px;
   margin: 2px;
@@ -89,7 +89,7 @@ body {
 }
 
 .password-input {
-  @include brawlr-element();
+  @include brawlr-element-text();
   font-size: 13px;
   width: 166px;
   margin: 2px;
