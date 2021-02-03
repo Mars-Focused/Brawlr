@@ -46,9 +46,10 @@ app.get("/api/get_sp_info/:sp", spCtrl.getSPInfo);
 
 app.post("/api/add_game", gameCtrl.addGame);
 
-app.get(express.static(__dirname + "/../build"));
+//Include this with your other top-level middleware
+app.use(express.static(`${__dirname}/../build`));
 
-app.get("*", (res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
