@@ -3,14 +3,17 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import SPBox from "../SPBox/SPBox";
 import { changeRecSPArr } from "../../Redux/spReducer";
+import { toggleDarkMode } from "../../Redux/darkModeReducer";
 
 const MainSPList = () => {
   const [SPArr, setSPArr] = useState([]);
+  const [SPArrIndex, setSPArrIndex] = useState(0);
 
   function getRecSparingPartners() {
     axios.get("/api/get_rec_sp").then((res) => {
       console.log(res.data);
       setSPArr(res.data);
+      changeRecSPArr(res.data);
     });
   }
 
@@ -18,7 +21,9 @@ const MainSPList = () => {
     getRecSparingPartners();
   }, []);
 
-  console.log("spArr:", SPArr);
+  function nextRecSP() {
+    setSPArrIndex(SPArrIndex + 1);
+  }
 
   return (
     <div>
@@ -27,6 +32,11 @@ const MainSPList = () => {
           <SPBox SPid={SPid} />
         ))}
       </div>
+      <div>{SPArrIndex}</div>
+      {/* <button onclick={() => dispatch({ type: TOGGLE_DARK_MODE })}>
+        Light/Dark
+      </button> */}
+      <button onClick={nextRecSP}>Next</button>
     </div>
   );
 };

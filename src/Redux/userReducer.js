@@ -1,4 +1,4 @@
-/* NOTES TO HELP YOU CONNECT AND STUFFS!
+/* NOTES TO HELP YOU CONNECT TO REDUX AND STUFFS!
 
 1) use "import { loginUser } from "../../Redux/userReducer" at the top to bring this in
 
