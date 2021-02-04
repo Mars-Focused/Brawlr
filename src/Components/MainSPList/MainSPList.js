@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import SPBox from "../SPBox/SPBox";
-import { changeSelectedSP } from "../../Redux/spReducer";
+import { changeRecSPArr } from "../../Redux/spReducer";
 
 const MainSPList = () => {
   const [SPArr, setSPArr] = useState([]);

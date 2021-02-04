@@ -32,8 +32,8 @@ const Login = (props) => {
     try {
       const res = await axios.post("/auth/login", { username, password }); // <- axios.post to log the user in, response is req.session.user from the server, storing it in variable called user.
       if (res.data.id) {
-        props.history.push("/Update"); // .this will end the function kind of like a return statement
         props.loginUser(res.data); // <- is calling the function loginUser on userReducer.js
+        props.history.push("/Update"); // .this will end the function kind of like a return statement
       }
     } catch (e) {
       alert("Login failed. Please try again.");

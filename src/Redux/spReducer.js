@@ -1,15 +1,15 @@
 //INITIAL STATE
 const initialState = {
-  selectedSP: true,
+  recSPArr: true,
 };
 
 //ACTION CONSTANTS
-const SELECT_SP = "SELECT_SP";
+const REC_SP = "REC_SP";
 
 //ACTION CREATORS
-export function changeSelectedSP(sp) {
+export function changeRecSPArr(sp) {
   return {
-    type: SELECT_SP,
+    type: REC_SP,
     payload: sp,
   };
 }
@@ -17,8 +17,8 @@ export function changeSelectedSP(sp) {
 //REDUCER
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case SELECT_SP:
-      return { ...state, selectedSP: action.payload };
+    case REC_SP:
+      return { ...state, recSPArr: action.payload };
 
     default:
       return state;
