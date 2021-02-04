@@ -5,10 +5,10 @@ import SPBox from "../SPBox/SPBox";
 
 const MainSPList = () => {
   const [SPArr, setSPArr] = useState([]);
-  
+
   function getRecSparingPartners() {
     axios.get("/api/get_rec_sp").then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setSPArr(res.data);
     });
   }
@@ -16,6 +16,8 @@ const MainSPList = () => {
   useEffect(() => {
     getRecSparingPartners();
   }, []);
+
+  console.log("spArr:", SPArr);
 
   return (
     <div>

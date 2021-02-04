@@ -10,7 +10,7 @@ const SPBox = (props) => {
   useEffect(() => {
     let { SPid } = props;
     axios.get(`/api/get_sp_info/${SPid.user_id}`).then((res) => {
-      console.log("SPBox, res.data[0]:", res.data[0]);
+      // console.log("SPBox, res.data[0]:", res.data[0]);
       setSPObj(res.data[0]);
     });
   }, []);

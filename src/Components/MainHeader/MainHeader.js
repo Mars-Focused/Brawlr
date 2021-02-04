@@ -14,7 +14,7 @@ class MainHeader extends Component {
       .then(() => {
         this.props.history.push("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err)); //<- console logs that log err are perfectly fine!
   }
 
   render() {

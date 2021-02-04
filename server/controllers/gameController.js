@@ -14,10 +14,10 @@ module.exports = {
       gameId = game_id;
       // return res.status(200);
     } else {
-      console.log(
-        "gameController, existingGame.game_id:",
-        existingGame.game_id
-      );
+      // console.log(
+      //   "gameController, existingGame.game_id:",
+      //   existingGame.game_id
+      // );
       gameId = existingGame.game_id;
     }
     await db.add_ugj([id, gameId]);

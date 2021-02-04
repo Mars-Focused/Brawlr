@@ -461,7 +461,7 @@ module.exports = {
       leila += leilaLegs;
 
       console.clear();
-      console.log(leila);
+      console.log(leila); // <- THIS STAYS DO NOT DELETE
       //DEBUG LOGIC BELOW
       // console.log("frame:", frame);
       // console.log("phraseNumber:", phraseNumber);

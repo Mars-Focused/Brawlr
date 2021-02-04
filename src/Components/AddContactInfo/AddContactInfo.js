@@ -13,17 +13,17 @@ const AddContactInfo = (props) => {
   async function sendInfo(e) {
     if (e) e.preventDefault();
     // try {
-    console.log("contactInfo:", contactInfo);
+    // console.log("contactInfo:", contactInfo);
     const res = await axios.put("/auth/add_contact_info", {
       contactInfo: contactInfo,
     });
-    console.log("res.data:", res.data);
+    // console.log("res.data:", res.data);
     if (res.data) {
       alert(`Your Contact info has been updated.`);
     }
   }
 
-  console.log(props);
+  // console.log(props);
   return (
     <div className="aci-box">
       <div className="contact-info-row">

@@ -44,7 +44,7 @@ module.exports = {
     const db = req.app.get("db");
     // get the ID of the other sp
     const spInfo = await db.get_user(sp);
-    console.log("spInfo:", spInfo);
+    // console.log("spInfo:", spInfo);
     const { user_id } = spInfo[0];
     await db.delete_sp(id, user_id);
     res.sendStatus(200);

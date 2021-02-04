@@ -19,7 +19,7 @@ const MySPList = () => {
     if (prevSPArr != mySPArr) {
       // ^^ this was changed from state
       axios.get("/api/get_my_sp").then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setMySPArr(res.data);
       });
     }
