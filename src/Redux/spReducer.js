@@ -1,24 +1,24 @@
 //INITIAL STATE
 const initialState = {
-  darkMode: true,
+  selectedSP: true,
 };
 
 //ACTION CONSTANTS
-const TOGGLE_DARK_MODE = "TOGGLE_DARK_MODE";
+const SELECT_SP = "SELECT_SP";
 
 //ACTION CREATORS
-export function toggleDarkMode(dm) {
+export function changeSelectedSP(sp) {
   return {
-    type: TOGGLE_DARK_MODE,
-    payload: dm,
+    type: SELECT_SP,
+    payload: sp,
   };
 }
 
 //REDUCER
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case TOGGLE_DARK_MODE:
-      return { ...state, darkMode: !action.payload };
+    case SELECT_SP:
+      return { ...state, selectedSP: action.payload };
 
     default:
       return state;
