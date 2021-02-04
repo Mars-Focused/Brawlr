@@ -5,6 +5,7 @@ import SPBox from "../SPBox/SPBox";
 
 const MainSPList = () => {
   const [SPArr, setSPArr] = useState([]);
+  
   function getRecSparingPartners() {
     axios.get("/api/get_rec_sp").then((res) => {
       console.log(res.data);

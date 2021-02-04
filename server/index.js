@@ -6,7 +6,6 @@ const authCtrl = require("./controllers/authController");
 const gameCtrl = require("./controllers/gameController");
 const spCtrl = require("./controllers/sPartnerController");
 const Leila = require("./leila/leila");
-const path = require("path");
 
 const PORT = 5000;
 
@@ -49,7 +48,7 @@ app.post("/api/add_game", gameCtrl.addGame);
 //Include this with your other top-level middleware
 app.use(express.static(`${__dirname}/../build`));
 
-app.get("*", (req, res) => {
+app.get("*", (res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
