@@ -2,13 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import SPBox from "../SPBox/SPBox";
+import { changeSelectedSP } from "../../Redux/spReducer";
 
 const MainSPList = () => {
   const [SPArr, setSPArr] = useState([]);
 
   function getRecSparingPartners() {
     axios.get("/api/get_rec_sp").then((res) => {
-      // console.log(res.data);
+      console.log(res.data);
       setSPArr(res.data);
     });
   }
