@@ -7,10 +7,9 @@ const initialState = {
 const TOGGLE_DARK_MODE = "TOGGLE_DARK_MODE";
 
 //ACTION CREATORS
-export function toggleDarkMode(dm) {
+export function toggleDarkMode() {
   return {
     type: TOGGLE_DARK_MODE,
-    payload: dm,
   };
 }
 
@@ -18,7 +17,7 @@ export function toggleDarkMode(dm) {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_DARK_MODE:
-      return { ...state, darkMode: !action.payload };
+      return { ...state, darkMode: !state.darkMode };
 
     default:
       return state;

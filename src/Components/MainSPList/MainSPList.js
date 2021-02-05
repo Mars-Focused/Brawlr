@@ -5,7 +5,7 @@ import SPBox from "../SPBox/SPBox";
 import { changeRecSPArr } from "../../Redux/spReducer";
 import { toggleDarkMode } from "../../Redux/darkModeReducer";
 
-const MainSPList = () => {
+const MainSPList = (props) => {
   const [SPArr, setSPArr] = useState([]);
   const [SPArrIndex, setSPArrIndex] = useState(0);
 
@@ -33,9 +33,7 @@ const MainSPList = () => {
         ))}
       </div>
       <div>{SPArrIndex}</div>
-      {/* <button onclick={() => dispatch({ type: TOGGLE_DARK_MODE })}>
-        Light/Dark
-      </button> */}
+      <button onClick={() => props.toggleDarkMode()}>Light/Dark</button>
       <button onClick={nextRecSP}>Next</button>
     </div>
   );
@@ -48,4 +46,12 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(mapStateToProps, {})(MainSPList);
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     darkModeToggle: () => {
+//       dispatch({ type: "TOGGLE_DARK_MODE" });
+//     },
+//   };
+// }
+
+export default connect(mapStateToProps, { toggleDarkMode })(MainSPList);

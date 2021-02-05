@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from "redux";
+import { devToolsEnhancer } from "redux-devtools-extension";
 import userReducer from "./userReducer";
 import darkModeReducer from "./darkModeReducer";
 import spReducer from "./spReducer";
@@ -9,4 +10,4 @@ const rootReducer = combineReducers({
   sp: spReducer,
 });
 
-export default createStore(rootReducer);
+export default createStore(rootReducer, devToolsEnhancer());
