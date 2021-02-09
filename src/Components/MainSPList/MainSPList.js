@@ -32,9 +32,13 @@ const MainSPList = (props) => {
           <SPBox SPid={SPid} />
         ))}
       </div>
-      <div>{SPArrIndex}</div>
-      <button onClick={() => props.toggleDarkMode()}>Light/Dark</button>
-      <button onClick={nextRecSP}>Next</button>
+      <div className="text">{SPArrIndex}</div>
+      <button className="login-btn" onClick={() => props.toggleDarkMode()}>
+        Light/Dark
+      </button>
+      <button className="login-btn" onClick={nextRecSP}>
+        Next
+      </button>
     </div>
   );
 };
@@ -45,13 +49,5 @@ function mapStateToProps(reduxState) {
     darkMode: reduxState.darkMode.darkMode,
   };
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     darkModeToggle: () => {
-//       dispatch({ type: "TOGGLE_DARK_MODE" });
-//     },
-//   };
-// }
 
 export default connect(mapStateToProps, { toggleDarkMode })(MainSPList);

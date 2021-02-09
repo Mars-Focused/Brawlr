@@ -16,3 +16,7 @@
 .remove-sp-button {
   @include brawlr-element();
 }
+
+.remove-sp-button:active {
+  @include brawlr-active;
+}
