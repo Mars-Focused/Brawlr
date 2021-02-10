@@ -7,7 +7,9 @@ CREATE TABLE brawlr_users (
   user_id SERIAL PRIMARY KEY,
   username VARCHAR(250) UNIQUE NOT NULL,
   hash VARCHAR(500) NOT NULL,
-  contact_info VARCHAR(500)
+  contact_info VARCHAR(500),
+  about_me VARCHAR(800),
+  my_main VARCHAR(20)
 );
 
 CREATE TABLE brawlr_games (
@@ -89,13 +91,6 @@ VALUES
 (12,1),
 (13,1),
 (14,5),
-(8,3),
-(3,3),
 (7,3),
 (4,3),
-(12,3),
-(15,6),
-(15,1),
-(15,5),
-(15,7),
-(15,3);
+(12,3);
