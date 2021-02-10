@@ -15,11 +15,15 @@ const SPBox = (props) => {
     });
   }, []);
 
-  const { username } = SPObj;
+  const { username, my_main, about_me } = SPObj;
+
+  console.log(SPObj);
 
   return (
     <div>
       <div className="sp-text">{username}</div>
+      <div className="sp-main">{my_main}</div>
+      <div className="sp-about">{about_me}</div>
     </div>
   );
 };
