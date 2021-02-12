@@ -4,3 +4,13 @@
   @include brawlr-text();
   font-size: 30px;
 }
+
+.sp-main {
+  @include brawlr-text();
+  font-size: 20px;
+}
+
+.sp-about {
+  @include brawlr-text();
+  font-size: 20px;
+}

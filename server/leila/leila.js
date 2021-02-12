@@ -178,24 +178,24 @@ module.exports = {
       }
 
       // Phrase 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      // if (phraseFrame == 1 && phraseNumber == 5 && phraseBit == "") {
-      //   phraseBit = `Keep Staring`;
-      // }
+      if (phraseFrame == 1 && phraseNumber == 5 && phraseBit == "") {
+        phraseBit = `Keep Staring`;
+      }
 
-      // if (phraseFrame == 2 && phraseNumber == 5 && phraseBit == "") {
-      //   phraseBit = `At My Boobs!`;
-      //   armsOut = 2;
-      // }
+      if (phraseFrame == 2 && phraseNumber == 5 && phraseBit == "") {
+        phraseBit = `At My Boobs!`;
+        armsOut = 2;
+      }
 
-      // if (phraseFrame == 5 && phraseNumber == 5 && phraseBit == "") {
-      //   phraseBit = `I Enjoy`;
-      //   armsOut = 1;
-      // }
+      if (phraseFrame == 5 && phraseNumber == 5 && phraseBit == "") {
+        phraseBit = `I Enjoy`;
+        armsOut = 1;
+      }
 
-      // if (phraseFrame == 6 && phraseNumber == 5 && phraseBit == "") {
-      //   phraseBit = `The Attention`;
-      //   armsOut = 1;
-      // }
+      if (phraseFrame == 6 && phraseNumber == 5 && phraseBit == "") {
+        phraseBit = `The Attention`;
+        armsOut = 1;
+      }
 
       // Phrase 6 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 6 && phraseBit == "") {
@@ -234,15 +234,15 @@ module.exports = {
       }
 
       // Phrase 8 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      // if (phraseFrame == 1 && phraseNumber == 8 && phraseBit == "") {
-      //   phraseBit = `No Thoughts`;
-      //   armsOut = 1;
-      // }
+      if (phraseFrame == 1 && phraseNumber == 8 && phraseBit == "") {
+        phraseBit = `No Thoughts`;
+        armsOut = 1;
+      }
 
-      // if (phraseFrame == 2 && phraseNumber == 8 && phraseBit == "") {
-      //   phraseBit = `Head Empty`;
-      //   armsOut = 1;
-      // }
+      if (phraseFrame == 2 && phraseNumber == 8 && phraseBit == "") {
+        phraseBit = `Head Empty`;
+        armsOut = 1;
+      }
 
       if (phraseFrame == 3 && phraseNumber == 8 && phraseBit == "") {
         phraseBit = `Nya! Nya!`;
@@ -252,26 +252,26 @@ module.exports = {
       if (phraseFrame == 4 && phraseNumber == 8 && phraseBit == "") {
         phraseBit = `Just a Pet`;
         armsOut = 2;
-        // mouthOpen = 2;
+        mouthOpen = 2;
       }
 
-      // // Phrase 9 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      // if (phraseFrame == 1 && phraseNumber == 9 && phraseBit == "") {
-      //   phraseBit = `WHERE AM I???`;
-      //   armsOut = 2;
-      // }
+      // Phrase 9 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `WHERE AM I???`;
+        armsOut = 2;
+      }
 
-      // if (phraseFrame == 2 && phraseNumber == 9 && phraseBit == "") {
-      //   phraseBit = `WHO ARE YOU???`;
-      //   armsOut = 2;
-      // }
+      if (phraseFrame == 2 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `WHO ARE YOU???`;
+        armsOut = 2;
+      }
 
-      // if (phraseFrame == 3 && phraseNumber == 9 && phraseBit == "") {
-      //   phraseBit = `..........`;
-      //   armsOut = 1;
-      //   mouthOpen = 2;
-      //   Chaos = 2;
-      // }
+      if (phraseFrame == 3 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `..........`;
+        armsOut = 1;
+        mouthOpen = 2;
+        Chaos = 2;
+      }
 
       if (phraseFrame == 4 && phraseNumber == 9 && phraseBit == "") {
         armsOut = 1;
@@ -378,17 +378,17 @@ module.exports = {
         phraseBit = `I'm Dumb`;
       }
 
-      // // Phrase 15 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      // if (phraseNumber == 15 && phraseBit == "") {
-      //   phraseBit = `!!!!!!!!!!!!`;
-      //   mouthOpen = Math.floor(Math.random() * 4);
-      //   armsOut = Math.floor(Math.random() * 3);
-      //   Chaos = 1;
-      // }
+      // Phrase 15 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `!!!!!!!!!!!!`;
+        mouthOpen = Math.floor(Math.random() * 4);
+        armsOut = Math.floor(Math.random() * 3);
+        Chaos = 1;
+      }
 
-      //LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
+      // LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
       // head and text bubble
-      //IF phraseBit IS TRUE! THEN USE SPEAKING HEAD, ELSE NON-SPEAKING HEAD
+      // IF phraseBit IS TRUE! THEN USE SPEAKING HEAD, ELSE NON-SPEAKING HEAD
 
       let leilaHead = "";
 
