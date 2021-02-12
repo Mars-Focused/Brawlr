@@ -35,12 +35,14 @@ const MainSPList = (props) => {
         ))}
       </div>
       <div className="text">{SPArrIndex}</div>
-      <button className="login-btn" onClick={() => props.toggleDarkMode()}>
-        Light/Dark
-      </button>
-      <button className="login-btn" onClick={nextRecSP}>
-        Next
-      </button>
+      <div className="btn-box">
+        <button className="login-btn" onClick={() => props.toggleDarkMode()}>
+          Light/Dark
+        </button>
+        <button className="login-btn" onClick={nextRecSP}>
+          Next
+        </button>
+      </div>
     </div>
   );
 };
