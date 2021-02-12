@@ -25,7 +25,7 @@ const MainSPList = (props) => {
     setSPArrIndex(SPArrIndex + 1);
   }
 
-  // console.log(SPid);
+  console.log(SPArr[0]);
 
   return (
     <div>
