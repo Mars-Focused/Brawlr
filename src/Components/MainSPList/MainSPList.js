@@ -28,8 +28,8 @@ const MainSPList = (props) => {
   console.log(SPArr[0]);
 
   return (
-    <div>
-      <div className="sp_list">
+    <div className="main-sp-list">
+      <div className="sp-list">
         {SPArr.map((SPid) => (
           <SPBox SPid={SPid} />
         ))}

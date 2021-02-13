@@ -20,7 +20,7 @@ const SPBox = (props) => {
   console.log(SPObj);
 
   return (
-    <div>
+    <div className="sp-box">
       <div className="sp-text">{username}</div>
       <div className="sp-main">{my_main}</div>
       <div className="sp-about">{about_me}</div>
