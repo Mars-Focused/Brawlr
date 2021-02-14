@@ -30,9 +30,12 @@ const MainSPList = (props) => {
   return (
     <div className="main-sp-list">
       <div className="sp-list">
-        {SPArr.map((SPid) => (
+        {/* {SPArr.map((SPid) => (
           <SPBox SPid={SPid} />
-        ))}
+        ))} */}
+        {SPArr.map((SPid, SPArrIndex) =>
+          (<SPBox SPid={SPid} />).slice(SPArrIndex, 1)
+        )}
       </div>
       <div className="text">{SPArrIndex}</div>
       <div className="btn-box">
