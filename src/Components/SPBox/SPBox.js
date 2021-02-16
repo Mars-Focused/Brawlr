@@ -5,12 +5,13 @@ import "./SPBox.scss";
 
 const SPBox = (props) => {
   const [SPObj, setSPObj] = useState({});
-  // console.log("SPBox-props", props);
+  console.log("SPBox-props", props);
 
   useEffect(() => {
-    let { SPid } = props;
-    axios.get(`/api/get_sp_info/${SPid.user_id}`).then((res) => {
-      // console.log("SPBox, res.data[0]:", res.data[0]);
+    let { user_id } = props.SPid;
+    console.log(props.SPid);
+    axios.get(`/api/get_sp_info/${user_id}`).then((res) => {
+      console.log("SPBox, res.data[0]:", res.data[0]);
       setSPObj(res.data[0]);
     });
   }, []);

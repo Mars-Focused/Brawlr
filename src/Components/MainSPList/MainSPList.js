@@ -8,6 +8,7 @@ import { toggleDarkMode } from "../../Redux/darkModeReducer";
 const MainSPList = (props) => {
   const [SPArr, setSPArr] = useState([]);
   const [SPArrIndex, setSPArrIndex] = useState(0);
+  const [SPid, setSPid] = useState(1);
 
   function getRecSparingPartners() {
     axios.get("/api/get_rec_sp").then((res) => {
@@ -23,9 +24,11 @@ const MainSPList = (props) => {
 
   function nextRecSP() {
     setSPArrIndex(SPArrIndex + 1);
+    setSPid(SPArr[SPArrIndex]);
   }
 
-  console.log(SPArr[0]);
+  console.log(SPArr[SPArrIndex]);
+  // setSPArrIndex(SPArr[SPArrIndex]);
 
   return (
     <div className="main-sp-list">
@@ -33,9 +36,7 @@ const MainSPList = (props) => {
         {/* {SPArr.map((SPid) => (
           <SPBox SPid={SPid} />
         ))} */}
-        {SPArr.map((SPid, SPArrIndex) =>
-          (<SPBox SPid={SPid} />).slice(SPArrIndex, 1)
-        )}
+        <SPBox SPid={SPid} />
       </div>
       <div className="text">{SPArrIndex}</div>
       <div className="btn-box">
