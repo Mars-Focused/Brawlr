@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS user_user_junction;
-DROP TABLE IF EXISTS game_user_junction;
+DROP TABLE IF EXISTS brawlr_user_user_junction;
+DROP TABLE IF EXISTS brawlr_game_user_junction;
 DROP TABLE IF EXISTS brawlr_games;
 DROP TABLE IF EXISTS brawlr_users;
 
@@ -17,13 +17,13 @@ CREATE TABLE brawlr_games (
   game_name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE game_user_junction(
+CREATE TABLE brawlr_game_user_junction(
   guj_id SERIAL PRIMARY KEY,
   user_id INT REFERENCES brawlr_users (user_id),
   game_id INT REFERENCES brawlr_games (game_id)
 );
 
-CREATE TABLE user_user_junction(
+CREATE TABLE brawlr_user_user_junction(
   uuj_id SERIAL PRIMARY KEY,
   user_id_1 INT REFERENCES brawlr_users (user_id),
   user_id_2 INT REFERENCES brawlr_users (user_id)
@@ -59,7 +59,7 @@ VALUES
 ('Fantasy Strike'),
 ('Street Fighter V');
 
-INSERT INTO user_user_junction
+INSERT INTO brawlr_user_user_junction
 (user_id_1, user_id_2)
 VALUES
 (1,1),
@@ -74,7 +74,7 @@ VALUES
 (15,12),
 (15,10);
 
-INSERT INTO game_user_junction
+INSERT INTO brawlr_game_user_junction
 (user_id, game_id)
 VALUES
 (1,1),
