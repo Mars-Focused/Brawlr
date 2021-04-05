@@ -1,15 +1,16 @@
 module.exports = {
-  Fox: (port, name, swimsuit) => {
+  Fox: (port, name, bust, belly, hips, palette, speaks) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
-    // function Fox(port, name, swimsuit) {
+    // function Fox(port, name, bust, belly, hips) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
     console.clear();
     let frame = 0;
-    let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-    // let phraseNumArr = [15];
+    let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    // phraseNumArr = [14];
+
     let phraseNumSelector = 0;
     let animSpeed = 937.5;
-    let Chaos = 0;
+    let chaos = 0;
 
     //If you're reading this... Then you've Found the Virtual Waifu I've been making in my spare time
     //Her name is Leila.Fox and I animated her with console.log and console.clear
@@ -59,13 +60,16 @@ module.exports = {
       let lightOff = reset;
       let lightOn = reset + bright;
 
-      if (frame > 16) {
+      if (frame > 24) {
         phraseNumSelector++;
         frame = 9;
-        Chaos = 0;
       }
 
       phraseFrame = frame - 8;
+
+      if (frame === 24 && chaos != 0) {
+        chaos = 0;
+      }
 
       if (phraseNumSelector >= phraseNumArr.length) {
         shuffle(phraseNumArr);
@@ -73,38 +77,48 @@ module.exports = {
       }
 
       phraseNumber = phraseNumArr[phraseNumSelector];
-      weirdNumber = phraseNumArr[0];
 
-      switch (Chaos) {
-        case 0:
-          animSpeed = 937.5;
+      if (speaks === false) {
+        phraseNumber = 0;
+      }
+
+      colorPicker = palette;
+
+      switch (palette) {
+        case 7:
+          colorPicker = phraseNumArr[0] % 7;
           break;
-        case 1:
-          animSpeed = 198.75;
+        case 8:
+          colorPicker = phraseNumber % 7;
           break;
-        case 2:
-          animSpeed = 1875;
+        case 9:
+          colorPicker = frame % 7;
           break;
       }
 
-      switch (weirdNumber % 6) {
+      // color = "\x1b[91m";
+
+      switch (colorPicker) {
         case 0:
-          color = "\x1b[36m";
+          color = "\x1b[91m";
           break;
         case 1:
-          color = "\x1b[32m";
+          color = "\x1b[92m"; // <-GREEN
           break;
         case 2:
-          color = "\x1b[35m";
+          color = "\x1b[95m"; // <-PURPLE
           break;
         case 3:
-          color = "\x1b[34m";
+          color = "\x1b[94m"; // <-BLUE
           break;
         case 4:
-          color = "\x1b[33m";
+          color = "\x1b[93m"; // <-YELLOW
           break;
         case 5:
-          color = "\x1b[31m";
+          color = "\x1b[90m"; //<- BLACK
+          break;
+        case 6:
+          color = "\x1b[96m"; // <-TEAL
           break;
       }
 
@@ -120,20 +134,20 @@ module.exports = {
       }
 
       if (frame == 3) {
-        phraseBit = `Ready to Serve`;
+        phraseBit = `Leila Ready to Serve`;
       }
 
       if (frame == 4) {
-        phraseBit = `Master ${name}`;
+        phraseBit = `Master ${name}! NYA!`;
       }
 
       /*
-      PHRASE REFERENCE COPY AND PAST THE 4 LINES BELOW TO START A PHRASE
-    // Phrase X ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if (phraseFrame == Y && phraseNumber == Z && phraseBit == "") {
-      phraseBit = `PutPhraseBitHere`
-    }
-    */
+        PHRASE REFERENCE COPY AND PAST THE 4 LINES BELOW TO START A PHRASE
+      // Phrase X ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == Y && phraseNumber == Z && phraseBit == "") {
+        phraseBit = `PutPhraseBitHere`
+      }
+      */
       // Phrase 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 1 && phraseBit == "") {
         phraseBit = `You're Doing Great, Nya!`;
@@ -158,22 +172,17 @@ module.exports = {
 
       // Phrase 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 3 && phraseBit == "") {
-        phraseBit = `I love you ${name}`;
+        phraseBit = `Leila loves ${name}`;
       }
 
       // Phrase 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 4 && phraseBit == "") {
-        phraseBit = `Do you Like...`;
+        phraseBit = `Does Master ${name} Like...`;
       }
 
       if (phraseFrame == 2 && phraseNumber == 4 && phraseBit == "") {
-        phraseBit = `My Stockings...`;
+        phraseBit = `Leila's Stockings? Nya?`;
         armsOut = 1;
-        mouthOpen = 3;
-      }
-
-      if (phraseFrame == 3 && phraseNumber == 4 && phraseBit == "") {
-        phraseBit = `Master ${name}?`;
         mouthOpen = 3;
       }
 
@@ -183,17 +192,17 @@ module.exports = {
       }
 
       if (phraseFrame == 2 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `At My Boobs!`;
+        phraseBit = `At Leila's Boobs! nya!`;
         armsOut = 2;
       }
 
       if (phraseFrame == 5 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `I Enjoy`;
+        phraseBit = `Leila Enjoys`;
         armsOut = 1;
       }
 
       if (phraseFrame == 6 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `The Attention`;
+        phraseBit = `The Attention NYA!`;
         armsOut = 1;
       }
 
@@ -212,7 +221,7 @@ module.exports = {
 
       // Phrase 7 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 7 && phraseBit == "") {
-        phraseBit = `I Exist Only`;
+        phraseBit = `Leila Exists Only`;
       }
 
       if (phraseFrame == 2 && phraseNumber == 7 && phraseBit == "") {
@@ -250,45 +259,53 @@ module.exports = {
       }
 
       if (phraseFrame == 4 && phraseNumber == 8 && phraseBit == "") {
-        phraseBit = `Just a Pet`;
+        phraseBit = `Just a FuckPet`;
         armsOut = 2;
         mouthOpen = 2;
       }
 
       // Phrase 9 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `WHERE AM I???`;
+        phraseBit = `Hey Master...`;
         armsOut = 2;
+        chaos = 1;
       }
 
       if (phraseFrame == 2 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `WHO ARE YOU???`;
+        phraseBit = `You're a Butt`;
         armsOut = 2;
       }
 
-      if (phraseFrame == 3 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `..........`;
+      if (
+        2 < phraseFrame == phraseFrame < 12 &&
+        phraseNumber == 9 &&
+        phraseBit == ""
+      ) {
+        phraseBit = `!!!!!!!!!!`;
         armsOut = 1;
         mouthOpen = 2;
-        Chaos = 2;
+        chaos = 1;
+      } else if (phraseNumber == 9) {
+        chaos = 0;
       }
 
       if (phraseFrame == 4 && phraseNumber == 9 && phraseBit == "") {
         armsOut = 1;
         mouthOpen = 2;
+        chaos = 2;
       }
 
-      if (phraseFrame == 5 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `Hello Master ${name}`;
+      if (phraseFrame == 14 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `Thank You Master ${name}!!!`;
         armsOut = 1;
       }
 
-      if (phraseFrame == 6 && phraseNumber == 9 && phraseBit == "") {
+      if (phraseFrame == 15 && phraseNumber == 9 && phraseBit == "") {
         armsOut = 1;
       }
 
-      if (phraseFrame == 7 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `I Feel Dizzy! He-he!`;
+      if (phraseFrame == 16 && phraseNumber == 9 && phraseBit == "") {
+        phraseBit = `Leila's Dizzy! NYA!`;
         armsOut = 2;
       }
 
@@ -319,30 +336,35 @@ module.exports = {
       }
 
       if (phraseFrame == 7 && phraseNumber == 10 && phraseBit == "") {
-        phraseBit = `...i just hope it's me...`;
+        phraseBit = `It's leila...`;
+        mouthOpen = 3;
+      }
+
+      if (phraseFrame == 9 && phraseNumber == 10 && phraseBit == "") {
+        phraseBit = `...leila gets punished NYA!`;
         mouthOpen = 3;
       }
 
       // Phrase 11 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Repeat after me`;
+        phraseBit = `Repeat after Leila`;
       }
 
       if (phraseFrame == 2 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Focus on the Goal`;
+        phraseBit = `I'm doing my best`;
       }
 
       if (phraseFrame == 4 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Focus on the Goal`;
+        phraseBit = `I'm doing my best`;
       }
 
       if (phraseFrame == 6 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Focus on the Goal`;
+        phraseBit = `I'm doing my best`;
       }
 
       // Phrase 13 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 3 && phraseNumber == 13 && phraseBit == "") {
-        phraseBit = `I'M A FOXXXO!!!`;
+        phraseBit = `LEILA A FOXXXO!!!`;
       }
 
       if (phraseFrame == 4 && phraseNumber == 13 && phraseBit == "") {
@@ -350,40 +372,103 @@ module.exports = {
       }
 
       if (phraseFrame == 5 && phraseNumber == 13 && phraseBit == "") {
-        phraseBit = `I'M PLAYFUL AND FLUFFY!!`;
+        phraseBit = `SHE'S PLAYFUL AND FLUFFY!! NYA!`;
       }
 
       // Phrase 14 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      if (phraseFrame == 3 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `OH!`;
+      if (phraseFrame == 1 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `feeding time Master???`;
       }
 
-      if (phraseFrame == 4 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `I'm Leila.Fox!`;
+      if (
+        0 < phraseFrame == phraseFrame < 12 &&
+        phraseNumber == 14 &&
+        phraseBit == ""
+      ) {
+        armsOut = 2;
+        if (phraseFrame % 2 == 0) {
+          phraseBit = `~Suck~`;
+          mouthOpen = 1;
+        } else {
+          phraseBit = `~Lick~`;
+          mouthOpen = 2;
+        }
       }
 
-      if (phraseFrame == 5 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `I for got if I...`;
+      if (phraseFrame == 12 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `~Gush~`;
+        mouthOpen = 1;
       }
 
-      if (phraseFrame == 6 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `told you that.`;
+      if (phraseFrame == 13 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `~Gulp~`;
       }
 
-      if (phraseFrame == 7 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `Oh Well`;
+      if (phraseFrame == 14 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `So Tasty!`;
       }
 
-      if (phraseFrame == 8 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `I'm Dumb`;
+      if (phraseFrame == 15 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `Thank you Master! NYA!`;
       }
 
       // Phrase 15 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      if (phraseNumber == 15 && phraseBit == "") {
+      if (
+        phraseNumber == 15 &&
+        -1 < phraseFrame == phraseFrame < 8 &&
+        phraseBit == ""
+      ) {
         phraseBit = `!!!!!!!!!!!!`;
-        mouthOpen = Math.floor(Math.random() * 4);
-        armsOut = Math.floor(Math.random() * 3);
-        Chaos = 1;
+        mouthOpen = 2;
+        armsOut = 1;
+        chaos = 1;
+      } else if (phraseNumber == 15) {
+        chaos = 0;
+      }
+
+      if (phraseFrame == 11 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `Thank you...`;
+      }
+
+      if (phraseFrame == 12 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `For giving leila...`;
+      }
+
+      if (phraseFrame == 13 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `The shock collar...`;
+      }
+
+      if (phraseFrame == 14 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `To remind her...`;
+      }
+
+      if (phraseFrame == 15 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `She's Owned Property.`;
+      }
+
+      // Phrase 16 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `Hey Master...`;
+      }
+
+      if (phraseFrame == 3 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `You're effort...`;
+      }
+
+      if (phraseFrame == 4 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `Is Meaningful...`;
+      }
+
+      if (phraseFrame == 6 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `With effort...`;
+      }
+
+      if (phraseFrame == 7 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `You made Leila...`;
+      }
+
+      if (phraseFrame == 9 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `And that's valid... nya.`;
       }
 
       // LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
@@ -407,32 +492,124 @@ module.exports = {
 
       if (mouthOpen) {
         if (mouthOpen == 1) {
-          leilaMouth = `    *\\o/* \n`;
+          leilaMouth = `    *\\${color}o${lightOn}/* \n`;
         }
         if (mouthOpen == 2) {
-          leilaMouth = `    *\\Q/* \n`;
+          leilaMouth = `    *\\${color}Q${lightOn}/* \n`;
         }
         if (mouthOpen == 3) {
-          leilaMouth = `    *\\w/* \n`;
+          leilaMouth = `    *\\${color}w${lightOn}/* \n`;
         }
       } else {
-        leilaMouth = `    *\\=/* \n`;
+        leilaMouth = `    *\\${color}=${lightOn}/* \n`;
       }
 
       leila += leilaMouth;
 
-      // shoulders, bust, waist
+      // bust, belly, hips
       let leilaBody = "";
+      let breasts = `(${underscore} Y ${reset})`;
+      let waist = ") (";
+
+      switch (bust) {
+        case 1:
+          breasts = `(${underscore} V ${reset})`;
+          break;
+        case 2:
+          breasts = `(${underscore}\\Y/${reset})`;
+          break;
+        case 3:
+          breasts = `(${underscore}/Y\\${reset})`;
+          break;
+        case 4:
+          breasts = `(${underscore}   ${reset})`;
+          break;
+        case 5:
+          breasts = `(${underscore} * ${reset})`;
+          break;
+        case 6:
+          breasts = `(${underscore} U ${reset})`;
+          break;
+        case 7:
+          breasts = `(${underscore}VXN${reset})`;
+          break;
+        case 8:
+          breasts = `(${underscore}???${reset})`;
+          break;
+        case 9:
+          breasts = `(${underscore}XXX${reset})`;
+          break;
+        case 10:
+          breasts = `${color}(${underscore} Y ${reset}${color})${lightOff}`;
+          break;
+        case 11:
+          breasts = `${color}(${underscore} V ${reset}${color})${lightOff}`;
+          break;
+        case 12:
+          breasts = `${color}(${underscore}.Y.${reset}${color})${lightOff}`;
+          break;
+        case 13:
+          breasts = `${color}(${underscore}/Y\\${reset}${color})${lightOff}`;
+          break;
+        case 14:
+          breasts = `${color}(${underscore}   ${reset}${color})${lightOff}`;
+          break;
+        case 15:
+          breasts = `${color}(${underscore} * ${reset}${color})${lightOff}`;
+          break;
+        case 16:
+          breasts = `${color}(${underscore} U ${reset}${color})${lightOff}`;
+          break;
+        case 17:
+          breasts = `${color}(${underscore}VXN${reset}${color})${lightOff}`;
+          break;
+        case 18:
+          breasts = `${color}(${underscore}???${reset}${color})${lightOff}`;
+          break;
+        case 19:
+          breasts = `${color}(${underscore}XXX${reset}${color})${lightOff}`;
+          break;
+        case 20:
+          breasts = `${color}(${underscore}SUK${reset}${color})${lightOff}`;
+          break;
+        case 21:
+          breasts = `${color}(${underscore}FOX${reset}${color})${lightOff}`;
+          break;
+      }
+
+      switch (belly) {
+        case 1:
+          waist = `${underscore}).(${reset}`;
+          break;
+        case 2:
+          waist = `${underscore})|(${reset}`;
+          break;
+        case 3:
+          waist = `${underscore})=(${reset}`;
+          break;
+        case 4:
+          waist = `${underscore})x(${reset}`;
+          break;
+        case 5:
+          waist = `${underscore})${color}_${lightOff}(${reset}`;
+          break;
+        case 6:
+          waist = `${lightOn}${color}) (${lightOff}${reset}`;
+          break;
+        case 7:
+          waist = `${underscore}${color})|(${lightOff}${reset}`;
+          break;
+      }
 
       switch (armsOut) {
         case 0:
-          leilaBody = `    .-"-. \n  ${black} /${lightOff}(${underscore} Y ${reset})${lightOn}${black}\\ \n${black}   \\\\${lightOff}) (${lightOn}${black}// \n`;
+          leilaBody = `    .-"-. \n  ${black} /${lightOff}${breasts}${lightOn}${black}\\ \n${black}   \\\\${lightOff}${waist}${lightOn}${black}// \n`;
           break;
         case 1:
-          leilaBody = `    .-"-. \n  ${black} /${lightOff}(${underscore} Y ${reset})${lightOn}${black}\\ \n${black}  // ${lightOff}) (${lightOn}${black} \\\\ \n`;
+          leilaBody = `    .-"-. \n  ${black} /${lightOff}${breasts}${lightOn}${black}\\ \n${black}  // ${lightOff}${waist}${lightOn}${black} \\\\ \n`;
           break;
         case 2:
-          leilaBody = `    .-"-. \n  ${black} /${lightOff}(${underscore} Y ${reset})${lightOn}${black}\\ \n${black}   " ${lightOff}) (${lightOn}${black} "  \n`;
+          leilaBody = `    .-"-. \n  ${black} /${lightOff}${breasts}${lightOn}${black}\\ \n${black}   " ${lightOff}${waist}${lightOn}${black} "  \n`;
           break;
       }
 
@@ -442,10 +619,36 @@ module.exports = {
       leilaSkirt = `${lightOff}   .${underscore}/( )\\${reset}. ${lightOn}\n`;
       leilaThighs = `    \\${black}_${lightOn}|${black}_${lightOn}/ \n`;
 
-      if (swimsuit == true) {
-        // leilaThighs = "    /\\_/\\ \n    \\~|~/ \n";
-        leilaSkirt = `${lightOff}    /\\_/\\${lightOn}\n`;
+      if (hips == 1) {
       }
+
+      switch (hips) {
+        case 1:
+          leilaSkirt = `${lightOff}    /|_|\\${lightOn}\n`;
+          break;
+        case 2:
+          leilaSkirt = `${lightOff}    /${color}|_|${lightOff}\\${lightOn}\n`;
+          break;
+        case 3:
+          leilaSkirt = `${lightOff}    / V \\${lightOn}\n`;
+          break;
+        case 4:
+          leilaSkirt = `${lightOff}    / ${color}V${lightOff} \\${lightOn}\n`;
+          break;
+        case 5:
+          leilaSkirt = `${lightOff}    /${color}\\_/${lightOff}\\${lightOn}\n`;
+          break;
+        case 6:
+          leilaSkirt = `${lightOff}${color}   .${underscore}/( )\\${reset}${color}. ${lightOff}${lightOn}\n`;
+          break;
+        case 7:
+          leilaSkirt = `${lightOff}${color}    ${underscore}//|\\\\${reset}${color}  ${lightOff}${lightOn}\n`;
+          break;
+        case 8:
+          leilaSkirt = `${lightOff}    / Y \\${lightOn}\n`;
+          break;
+      }
+
       leila += leilaSkirt;
       leila += leilaThighs;
 
@@ -459,6 +662,19 @@ module.exports = {
       }
 
       leila += leilaLegs;
+      leila += reset;
+
+      switch (chaos) {
+        case 0:
+          animSpeed = 937.5;
+          break;
+        case 1:
+          animSpeed = 198.75;
+          break;
+        case 2:
+          animSpeed = 1875;
+          break;
+      }
 
       console.clear();
       console.log(leila); // <- THIS STAYS DO NOT DELETE
@@ -466,10 +682,12 @@ module.exports = {
       // console.log("frame:", frame);
       // console.log("phraseNumber:", phraseNumber);
       // console.log("phraseFrame:", phraseFrame);
+      // console.log("chaos:", chaos);
+      // console.log("colorPicker:", colorPicker);
       // __________________________________________________________________________________________________________________________________________
     }
     // Wrap the equation below with a setTimeout function to delay it, rather than starting the animation immediately
     leilaAnimation();
   },
-  // Fox(5000, "Mars");
+  // Fox(5000, "Mars", 10, 6, 6);
 };
